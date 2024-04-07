@@ -6,79 +6,49 @@
     font-family: "Tilt Neon";
     box-sizing: border-box;
 }
-body{
 
-    height: 100vh;
-    width: 100%;
-
-}
-
-/* Topo da tela */
-
+/* Top from the screen */
 header{
 
-    height: 50px;
+    background-color: rgb(93, 0, 62);
+    height: 70px;
     width: 100%;
-    background-color: rgb(137, 43, 226);
-    font-size: 20px;
-    box-shadow: 0px 0px 10px black;
-}   
-main div a {
-
-    color: white;
-    text-decoration: none;
-}
-main div a:hover{
-
-    text-decoration: underline; 
-}
-img{
-
-    height: 50px;
-    width: 50px;
-    margin-left: 20px;
+   
 }
 #user{
-
     position: absolute;
     right: 40px;
-    top: 14px;
+    top: 23px;
+    font-size: 25px;
     cursor: pointer;
     color: white;
+
 }
 #user:hover{
 
     transform: scale(1.1);
     transition: 0.5s;
 }
-#ico{   
 
-    position: absolute;
-    height: 100%;
-    width: 55px;
-    background-size: cover;
-    left: 3%;
-
-}      
-
-/* Página Principal */
+/* Primary part from the page, box from the login and background 1 */
 
 #main-page{
 
     width: 100%;
     height: 650px;
-    background: url('./photos/img_3.png');
+    background: url('./photos/photo-1-main-page.png');
     background-size: cover;
+    background-position-x: left;
     display: flex;
     align-items: center;
     justify-content: end;  
-        
+    
 }
 #box-login{
 
     height: 500px;
     width: 400px;
-    background-color: rgba(137, 43, 226, 0.521);
+    background-color: rgb(93, 0, 62, 0.7);
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 10px black;
     border-radius: 10px;
@@ -120,54 +90,115 @@ img{
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
-    color: rgba(95, 0, 184, 0.918);
+    color: rgb(93, 0, 62);
     
 }
 #button-login:hover{
 
-    background-color: rgba(106, 0, 206, 0.918);
+    background-color: rgb(93, 0, 62, 0);
     color: white;
-    transition: 0.3s;
+    transition: 0.2s;
+    border: 1px solid white;
+}
+#button-login:active{
+    background-color: white;
+    color: rgb(93, 0, 62);
+}
+main div a {
+
+    color: white;
+    text-decoration: none;
+}
+main div a:hover{
+
+    text-decoration: underline; 
 }
 
-/* Promoções */
+/* Part of the promotions e best stores */
 
-#promo{
+/* The Best stores */
+
+#best-stores-and-promotions{
 
     width: 100%;
     height: 2000px;
-    background: linear-gradient(to bottom, rgb(93, 0, 62), rgb(204, 0, 255) );
+    background: linear-gradient(to bottom, rgb(93, 0, 62), rgb(156, 0, 104) );
     
 }
-section section{
+section #best-stores h2{
+
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#best-stores{
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-section section div{
+    color: white;
 
-    height: 400px;
-    width: 300px;
-    background-color: white;
-    margin: 50px;
+}
+section #best-stores div{
+
+    height: 100px;
+    width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 50px 10px 50px 10px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
+section #best-stores div:hover{
+
+    border: 1px solid rgba(255, 255, 255);
+    transition: 0.5s;
+}
+
+/* The best promotions */
+
+#best-promotion{
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+section #best-promotion h2{
+
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 10px;
+    color: white;
+    
+}
+section #best-promotion div{
+
+    height: 150px;
+    width: 170px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 50px 10px 50px 10px;
     float: left;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Rodapé */
+/* footer of page */
 
 footer{
 
     padding: 10px 10px 10px 10px;
     width: 100%;
     height: 130px;
-    background-color: rgb(204, 0, 255);
+    background-color: rgb(156, 0, 104);
     display: grid;
     box-shadow: 0px 0px 10px black;
+    
+}
+footer div a{
 
+    text-decoration: none;
 }
 #opcoes{
 
@@ -175,80 +206,40 @@ footer{
     width: 100px;
     right: 5%;
     margin: 20px;
-}
-#opcoes:hover > :not(:hover){
-
-    transform: scale(0.9);
-    transition: 0.5s;
-}
-#footer_qs{
-
-    color: white;
     font-size: 13px;
-    
+     
 }
 #footer_qs:hover{
 
-    background: linear-gradient(to right, #001572, #3131bd);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 14px;
-    transition: 0.5s;
-}
-#footer_suporte{
-
-    color: white;
-    font-size: 13px;
+    text-decoration: underline;
+    
 }
 #footer_suporte:hover{
 
-    background: linear-gradient(to right, #001572, #3131bd);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 14px;
-    transition: 0.5s;
-}
-#footer_wpp{
-
-    color: white;
-    font-size: 13px;
-
+    text-decoration: underline;
 }
 #footer_wpp:hover{
 
-    background: linear-gradient(to right, #006d18, #1fe751);
-    -webkit-background-clip: text;
-    color: transparent;
-    transition: 0.5s;
-    font-size: 14px;
-}
-
-#footer_instagram{
-
-    background: linear-gradient(to right, #ff0000, #0000ff);
-    -webkit-background-clip: text;
-    color: white;
-    font-size: 13px;
-    
+    text-decoration: underline;
 }
 #footer_instagram:hover{
 
-    background: linear-gradient(to right, #ff0000, #0000ff);
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 14px;
-    transition: 0.5s;
+    text-decoration: underline;
     
 }
 #footer_img{
 
-    height: 80px;
-    width: 80px;
+    height: 90%;
+    width: 100px;
     margin-top: 1%;
     margin-left: 4%;
 }
+
+/* Screen with a maximum width of 768 pixels */
+
 @media (max-width: 768px){
     #main-page {
+
         display: flex;
         align-items: center;
         justify-content: center;  
@@ -259,8 +250,14 @@ footer{
     }
     section section div{
 
-        height: 200px;
-        width: 150px;
-        margin: 10px;
+        height: 70px;
+        width: 140px;
+        margin: 50px 10px 10px 10px;
+        
     }
+    section section{
+
+        text-align: center
+    }
+    
 }
