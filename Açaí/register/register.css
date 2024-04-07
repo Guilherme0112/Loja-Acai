@@ -1,0 +1,189 @@
+*{
+
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+body{
+
+    background-attachment: fixed;
+    background-color: blueviolet;
+    background-image: url('../photos/img_3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#back{
+
+    position: absolute;
+    height: 40px;
+    width: 60px;
+    left: 3%;
+    top: 3%;
+    border-bottom: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.218);
+    border-radius: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+   }
+#back:hover{
+
+    box-shadow: 0px 0px 5px white;
+}
+#back:active{
+
+    background-color: rgba(255, 255, 255, 0.400);
+}
+
+#box{       
+    
+    height: 600px;
+    width: 650px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.100);
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 0px 5px black;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+h2{
+
+    margin-bottom: 50px;
+    margin-top: 40px;
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px black;
+
+}
+#label_name{
+
+    text-shadow: 2px 2px 5px black;
+}
+#name{
+        
+    background-color:rgb(255, 255, 255, 0.218);
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    margin-left: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+#name::placeholder{
+
+    color: rgba(255, 255, 255, 0.500);
+}
+#name:hover{
+
+    box-shadow: 0px 0px 5px white;
+}
+#label_address{
+
+    text-shadow: 2px 2px 5px black;
+}
+#address{
+        
+    background-color:rgb(255, 255, 255, 0.218);
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    margin-left: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+}
+#address::placeholder{
+
+    color: rgba(255, 255, 255, 0.500);
+}
+#address:hover{
+
+    box-shadow: 0px 0px 5px white;
+}
+#label_phone{
+
+    text-shadow: 2px 2px 5px black;
+}
+#phone{
+        
+    background-color:rgb(255, 255, 255, 0.218);
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    margin-left: 18px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#phone::placeholder{
+
+    color: rgba(255, 255, 255, 0.500);
+
+}
+#phone:hover{
+
+    box-shadow: 0px 0px 5px white;
+}  
+#label_email{
+
+    text-shadow: 2px 2px 5px black;
+}
+#email{        
+
+    background-color:rgb(255, 255, 255, 0.218);
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    margin-left: 18px;
+    margin-top: 10px;
+}
+#email::placeholder{
+    
+    color: rgba(255, 255, 255, 0.500);
+}
+#email:hover{
+
+    box-shadow: 0px 0px 5px white;
+}
+#register{
+
+    height: 50px;
+    width: 120px;
+    border-bottom: 2px solid white;
+    margin-top: 50px;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.218);
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 0px 0px 10px black;
+
+}
+#register:hover{
+
+    box-shadow: 0px 0px 5px white;
+}
+#register:active{
+
+    background-color: rgba(255, 255, 255, 0.400);
+}

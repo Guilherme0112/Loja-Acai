@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre-se</title>
+    <script src="register.js"></script>
+    <link rel="stylesheet" href="register.css">
+    <link rel="shortcut icon" href="../photos/icone.ico" type="image/x-icon">
+</head>
+<body>
+    <form id = 'box' action="/register" method="POST">
+        <h2>Informações</h2>
+        <label id='label_name'>Nome completo: </label><br>
+        <input type="text" id="name" placeholder="Seu nome completo" required> <br>
+        
+        <label id='label_address'>Endereço:</label> <br>
+        <input type="text" id="address" placeholder="Ex: Rua X, Bairro Y, Nº Z"> <br>
+        
+        <label id = 'label_phone'>Telefone:</label> <br>   
+        <input type="tel" id="phone" placeholder="Ex: (00) 0000-0000" > <br>
+        
+        <label id = 'label_email'>E-mail:</label> <br>
+        <input type="email" id="email" placeholder="Ex: email@gmail.com" >  <br>
+
+        <input type="submit" id= 'register' value="Registrar">
+        <button id = 'back' onclick="back()"><</button>  
+    </form>
+</body>
+</html>

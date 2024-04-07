@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+*{
+
+    margin: 0px;
+    border: 0px;
+    font-family: "Tilt Neon";
+    box-sizing: border-box;
+}
+body{
+
+    height: 100vh;
+    width: 100%;
+
+}
+
+/* Topo da tela */
+
+header{
+
+    height: 50px;
+    width: 100%;
+    background-color: rgb(137, 43, 226);
+    font-size: 20px;
+    box-shadow: 0px 0px 10px black;
+}   
+main div a {
+
+    color: white;
+    text-decoration: none;
+}
+main div a:hover{
+
+    text-decoration: underline; 
+}
+img{
+
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+}
+#user{
+
+    position: absolute;
+    right: 40px;
+    top: 14px;
+    cursor: pointer;
+    color: white;
+}
+#user:hover{
+
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+#ico{   
+
+    position: absolute;
+    height: 100%;
+    width: 55px;
+    background-size: cover;
+    left: 3%;
+
+}      
+
+/* Página Principal */
+
+#main-page{
+
+    width: 100%;
+    height: 650px;
+    background: url('./photos/img_3.png');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: end;  
+        
+}
+#box-login{
+
+    height: 500px;
+    width: 400px;
+    background-color: rgba(137, 43, 226, 0.521);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#box-size-login{
+    
+    flex-wrap: wrap;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#email{
+
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+#password{
+
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+#button-login{
+
+    margin: 10px;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgba(95, 0, 184, 0.918);
+    
+}
+#button-login:hover{
+
+    background-color: rgba(106, 0, 206, 0.918);
+    color: white;
+    transition: 0.3s;
+}
+
+/* Promoções */
+
+#promo{
+
+    width: 100%;
+    height: 2000px;
+    background-color: rgb(137, 43, 226);
+    
+}
+section section{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+section section div{
+
+    height: 400px;
+    width: 300px;
+    background-color: white;
+    margin: 50px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Rodapé */
+
+footer{
+
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    height: 130px;
+    background-color: rgb(123, 76, 167);
+    display: grid;
+    box-shadow: 0px 0px 10px black;
+
+}
+#opcoes{
+
+    position: absolute;
+    width: 100px;
+    right: 5%;
+    margin: 20px;
+}
+#opcoes:hover > :not(:hover){
+
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+#footer_qs{
+
+    color: white;
+    font-size: 13px;
+    
+}
+#footer_qs:hover{
+
+    background: linear-gradient(to right, #001572, #3131bd);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 14px;
+    transition: 0.5s;
+}
+#footer_suporte{
+
+    color: white;
+    font-size: 13px;
+}
+#footer_suporte:hover{
+
+    background: linear-gradient(to right, #001572, #3131bd);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 14px;
+    transition: 0.5s;
+}
+#footer_wpp{
+
+    color: white;
+    font-size: 13px;
+
+}
+#footer_wpp:hover{
+
+    background: linear-gradient(to right, #006d18, #1fe751);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 0.5s;
+    font-size: 14px;
+}
+
+#footer_instagram{
+
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    -webkit-background-clip: text;
+    color: white;
+    font-size: 13px;
+    
+}
+#footer_instagram:hover{
+
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 14px;
+    transition: 0.5s;
+    
+}
+#footer_img{
+
+    height: 80px;
+    width: 80px;
+    margin-top: 1%;
+    margin-left: 4%;
+}
+@media (max-width: 768px){
+    #main-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+    }
+    #box-login{
+
+        margin: 0;
+    }
+}

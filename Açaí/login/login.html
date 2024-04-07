@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaí</title>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="../photos/icone.ico" type="image/x-icon">
+</head>
+<body> 
+    <div class="screen">
+        <div id="box">
+            <button id = 'back' onclick="back()"><</button>
+            <h1 id="h1">Faça Login</h1>
+            <h2>e peça seu AÇAÍ!</h2>
+            <label id = 'label_email'>E-mail:</label>
+                <input type="text" id = 'email' placeholder = 'Digite seu E-mail'>
+            <label id = 'label_pass'>Senha:</label>
+                <input type="password" id = 'pass' placeholder="Digite sua senha">
+            <div id="cad">
+                <a href="../register/register.html" id = 'cad'> Crie uma conta</a>
+            </div>             
+            <button id="logar" onclick="logar()">Entrar</button>
+            <div id="msg"></div>
+        </div> 
+    </div>
+</body>
+</html>
