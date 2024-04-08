@@ -1,19 +1,40 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 *{
 
-    margin: 0px;
-    border: 0px;
+    margin: 0;
+    border: 0;
     font-family: "Tilt Neon";
     box-sizing: border-box;
 }
+html{
 
+    background-color: rgb(156, 0, 104);
+}
 /* Top from the screen */
+
 header{
 
     background-color: rgb(93, 0, 62);
     height: 70px;
     width: 100%;
    
+}
+header div{
+
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+header div a{
+
+    text-decoration: none;
+    color: white;
+    margin: 30px;
+}
+header div a:hover{
+
+    text-decoration: underline;
 }
 #user{
     position: absolute;
@@ -42,7 +63,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: end;  
-    
 }
 #box-login{
 
@@ -121,7 +141,6 @@ main div a:hover{
 #best-stores-and-promotions{
 
     width: 100%;
-    height: 2000px;
     background: linear-gradient(to bottom, rgb(93, 0, 62), rgb(156, 0, 104) );
     
 }
@@ -158,14 +177,14 @@ section #best-stores div:hover{
 
 /* The best promotions */
 
-#best-promotion{
+#outers{
 
    display: flex;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
 }
-section #best-promotion h2{
+section #outers h2{
 
     width: 100%;
     margin-left: 30px;
@@ -173,27 +192,32 @@ section #best-promotion h2{
     color: white;
     
 }
-section #best-promotion div{
+section #outers div{
 
-    height: 150px;
-    width: 170px;
+    height: 400px;
+    width: 270px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     margin: 50px 10px 50px 10px;
     float: left;
     border-radius: 5px;
     cursor: pointer;
 }
+section #outers div:hover{
 
+    border: 1px solid white;
+    transition: 0.5s;
+}
 /* footer of page */
 
 footer{
 
-    padding: 10px 10px 10px 10px;
     width: 100%;
-    height: 130px;
+    height: 100px;
     background-color: rgb(156, 0, 104);
-    display: grid;
     box-shadow: 0px 0px 10px black;
+    display: flex;
+    align-items: center;
+    justify-content: end;
     
 }
 footer div a{
@@ -202,10 +226,8 @@ footer div a{
 }
 #opcoes{
 
-    position: absolute;
-    width: 100px;
-    right: 5%;
-    margin: 20px;
+    display: grid;
+    width: 150px;
     font-size: 13px;
      
 }
@@ -227,17 +249,17 @@ footer div a{
     text-decoration: underline;
     
 }
-#footer_img{
-
-    height: 90%;
-    width: 100px;
-    margin-top: 1%;
-    margin-left: 4%;
-}
 
 /* Screen with a maximum width of 768 pixels */
 
 @media (max-width: 768px){
+    
+    header div a{
+
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+    }
     #main-page {
 
         display: flex;
@@ -259,5 +281,10 @@ footer div a{
 
         text-align: center
     }
-    
+    section #outers div{
+
+        height: 270px;
+        width: 140px;
+    }
+
 }
