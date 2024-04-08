@@ -1,189 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 *{
-
-    margin: 0px;
-    border: 0px;
+    padding: 0;
+    margin: 0;
+    font-family: Tilt Neon;
     box-sizing: border-box;
+    border: 0;
 }
-body{
+main{
 
-    background-attachment: fixed;
-    background-color: blueviolet;
-    background-image: url('../photos/img_3.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    justify-content: end;
+    
+}
+section{
+
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(to bottom, rgb(93, 0, 62) 20%, rgb(156, 0, 104));
+    box-shadow: 0px 0px 10px black;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+section div{
+
+    width: 100%;
+    height: 40px;
+    margin-left: 20px;
 }
 #back{
 
-    position: absolute;
     height: 40px;
-    width: 60px;
-    left: 3%;
-    top: 3%;
-    border-bottom: 2px solid white;
-    background-color: rgba(255, 255, 255, 0.218);
-    border-radius: 10px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-   }
+    width: 40px;
+    font-size: 40px;
+    padding: 0px 2px 3px 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #back:hover{
 
-    box-shadow: 0px 0px 5px white;
+    background-color: rgb(156, 0, 104);
 }
-#back:active{
+form{
 
-    background-color: rgba(255, 255, 255, 0.400);
+    height: 60%;
+    width: 90%;
+    padding: 0px 50px 0px 50px;
+    display: grid;
+    margin-bottom: 30%;
+   
 }
+label{
 
-#box{       
-    
-    height: 600px;
-    width: 650px;
+    color: white;
+}
+input{
+
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.100);
+    margin: 10px 0px 10px 0px;
+}
+a{
+
     color: white;
-    font-size: 18px;
-    box-shadow: 0px 0px 5px black;
-    text-align: center;
-    backdrop-filter: blur(10px);
+    margin: 5px 0px 10px 0px;
+    text-decoration: none;
+    width: 150px;
 }
-h2{
+a:hover{
 
-    margin-bottom: 50px;
-    margin-top: 40px;
-    color: white;
-    font-size: 30px;
-    text-shadow: 2px 2px 5px black;
-
+    text-decoration: underline;
 }
-#label_name{
+button{
 
-    text-shadow: 2px 2px 5px black;
-}
-#name{
-        
-    background-color:rgb(255, 255, 255, 0.218);
-    border-bottom: 2px solid white;
+    width: 100%;
+    height: 40px;
     border-radius: 10px;
-    height: 30px;
-    width: 300px;
-    text-align: center;
-    color: white;
-    margin-left: 18px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 15px;
-}
-#name::placeholder{
-
-    color: rgba(255, 255, 255, 0.500);
-}
-#name:hover{
-
-    box-shadow: 0px 0px 5px white;
-}
-#label_address{
-
-    text-shadow: 2px 2px 5px black;
-}
-#address{
-        
-    background-color:rgb(255, 255, 255, 0.218);
-    border-bottom: 2px solid white;
-    border-radius: 10px;
-    height: 30px;
-    width: 300px;
-    text-align: center;
-    color: white;
-    margin-left: 18px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    
-}
-#address::placeholder{
-
-    color: rgba(255, 255, 255, 0.500);
-}
-#address:hover{
-
-    box-shadow: 0px 0px 5px white;
-}
-#label_phone{
-
-    text-shadow: 2px 2px 5px black;
-}
-#phone{
-        
-    background-color:rgb(255, 255, 255, 0.218);
-    border-bottom: 2px solid white;
-    border-radius: 10px;
-    height: 30px;
-    width: 300px;
-    text-align: center;
-    color: white;
-    margin-left: 18px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-#phone::placeholder{
-
-    color: rgba(255, 255, 255, 0.500);
-
-}
-#phone:hover{
-
-    box-shadow: 0px 0px 5px white;
-}  
-#label_email{
-
-    text-shadow: 2px 2px 5px black;
-}
-#email{        
-
-    background-color:rgb(255, 255, 255, 0.218);
-    border-bottom: 2px solid white;
-    border-radius: 10px;
-    height: 30px;
-    width: 300px;
-    text-align: center;
-    color: white;
-    margin-left: 18px;
-    margin-top: 10px;
-}
-#email::placeholder{
-    
-    color: rgba(255, 255, 255, 0.500);
-}
-#email:hover{
-
-    box-shadow: 0px 0px 5px white;
-}
-#register{
-
-    height: 50px;
-    width: 120px;
-    border-bottom: 2px solid white;
-    margin-top: 50px;
-    margin-left: 10px;
-    background-color: rgba(255, 255, 255, 0.218);
-    border-radius: 10px;
-    font-size: 18px;
-    color: white;
+    background-color: white;
+    color: rgb(93, 0, 62);
     cursor: pointer;
-    text-shadow: 2px 2px 5px black;
-    box-shadow: 0px 0px 10px black;
+    font-size: 20px;
+}
+button:hover{
+
+    background-color: rgb(93, 0, 62);
+    color: white;
+    transition: 0.3s;
+}
+#img{
+
+    background: url('../photos/back-register.jpg');
+    background-size: cover;
+    background-position: center center;
+    width: 60%;
+    height: 100vh;
 
 }
-#register:hover{
+@media (max-width: 768px){
 
-    box-shadow: 0px 0px 5px white;
-}
-#register:active{
+    
+    main{
 
-    background-color: rgba(255, 255, 255, 0.400);
+        width: 100%;
+        height: 100vh;
+        background: url('../photos/back-register.jpg');
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    section{
+
+        height: 100vh;
+        width: 90%;
+    }
+    form{
+
+        width: 100%;
+        margin-bottom: 30%;
+    }
+    #img{
+
+        width: 0;
+        height: 0;
+    }
 }
