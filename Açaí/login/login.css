@@ -1,181 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 *{
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
+    font-family: Tilt Neon;
     box-sizing: border-box;
+    border: 0;
 }
-body{
+main{
 
-    background-attachment: fixed;
-    background-size: cover;
-    background-image: url('../photos/back_login.png');
-    background-color: rgb(84, 0, 95);
-   
-}
-.screen{
-    height: 100vh;
     width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: end;
+    
+}
+section{
+
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(to bottom, rgb(93, 0, 62) 20%, rgb(156, 0, 104));
+    box-shadow: 0px 0px 10px black;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+section div{
+
+    width: 100%;
+    height: 40px;
+    margin-left: 20px;
 }
 #back{
 
-    position: absolute;
-    left: 3%;
-    top: 3%;
-    height: 35px;
-    width: 35px;
-    border-radius: 10px;
-    border: 0px solid transparent;
-    border-bottom: 3px solid rgb(84, 0, 95);
-    background-color: rgba(255, 255, 255, 0.100);
-    font-size: 27px;
-    color: white;
-    cursor: pointer;
-
-}
-#back:hover{
-
-    background-color: rgba(255, 255, 255, 0.100);
-    box-shadow: 0px 0px 5px rgb(84, 0, 95);
-}
-#back:active{
-
-    background-color: rgba(255, 255, 255, 0.200);
-}
-#box{
-
-    height: 500px;
-    width: 400px;
-    background-color: blueviolet;
-    border-radius: 20px; 
-    background-color: rgba(255, 255, 255, 0.248);
-    backdrop-filter: blur(10px);
-    padding: 10px;
-    box-shadow: 0px 0px 5px black;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    padding: 0px 2px 3px 0px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-h1{ 
-    
-    position: absolute;
-    font-size: 50px;
-    top: 10%;
-    text-align: center;
-    text-shadow: 2px 2px 2px black;
-    font-style: Arial;
+#back:hover{
+
+    background-color: rgb(156, 0, 104);
+}
+form{
+
+    height: 45%;
+    width: 90%;
+    padding: 0px 50px 0px 50px;
+    display: grid;
+    margin-bottom: 10%;
+   
+}
+label{
+
     color: white;
 }
-h2{
-    position: absolute;
-    top: 22%;
-    font-size: 30px;
-    color: white;
-    text-shadow: 2px 2px 2px black;
-}
-#email{
-    
-    position: absolute;
-    top: 43%;
-    padding: 5px;
-    text-align: center;
-    border: 0px solid transparent;
-    border-radius: 5px;
-    border-bottom: 3px solid rgb(112, 0, 120);
-    background-color: rgba(106, 0, 92, 0.071);
-    color: white;
+input{
 
-}
-#label_email{ 
-
-    position: absolute;
-    top: 39%;
-    left: 30%;
-    text-shadow: 2px 2px 2px black;
-    color: white;
-}
-#pass{
-
-    position: absolute;
-    top: 56%;
-    padding: 5px;
-    text-align: center;
-    border: 0px solid transparent;
-    border-radius: 5px;
-    border-bottom: 3px solid rgb(112, 0, 120);
-    background-color: rgba(106, 0, 92, 0.071);
-    color: white;
-
-}
-#label_pass{
-
-    position: absolute;
-    top: 52%;
-    left: 30%;
-    text-shadow: 2px 2px 3px black;
-    color: white;
-}
-input::placeholder{
-
-    color: rgba(255, 255, 255, 0.383);
-}
-#cad{
-
-    position: absolute;
-    width: 100px;
-    bottom: 31%;
-    text-shadow: 2px 2px 3px black;
-    color: white;
-}
-#cad:hover{
-
-    transform: scale(0.9);
-    transition: 0.2s;
-}
-#logar{
-
-    position: absolute;
-    bottom: 15%;
-    width: 100px;
+    width: 100%;
     height: 40px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    border-bottom: 3px solid  rgb(112, 0, 120);
-    background-color: rgba(106, 0, 92, 0.071);
+    padding-left: 10px;
+    border-radius: 10px;
+    margin: 10px 0px 10px 0px;
+}
+a{
+
     color: white;
+    margin: 5px 0px 10px 0px;
+    text-decoration: none;
+    width: 150px;
+}
+a:hover{
+
+    text-decoration: underline;
+}
+button{
+
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(93, 0, 62);
     cursor: pointer;
     font-size: 20px;
-    font-style: italic;
-
 }
-#logar:hover{
+button:hover{
 
-
-    background-color: rgba(255, 255, 255, 0.100);
-    transition: 0.2s;
-    transform: scale(1.1);
-    box-shadow: 0px 0px 5px rgb(112, 0, 120);
-}
-#logar:active{
-
-    background-color: rgba(255, 255, 255, 0.256);
-    transform: scale(1.0);
-}
-#msg{
-
-    position: absolute;
-    text-align: center;
+    background-color: rgb(93, 0, 62);
     color: white;
-    margin-top: 30px;
-    text-shadow: 2px 2px 2px black;
-    bottom: 30px;
+    transition: 0.3s;
+}
+#img{
+
+    background: url('../photos/back_login.png');
+    background-size: cover;
+    background-position: center center;
+    width: 60%;
+    height: 100vh;
 
 }
-footer{
+@media (max-width: 768px){
 
-    color: white;
-    text-align: center;
-    margin-top: 30px;
-    text-shadow: 2px 2px 2px black;
+    
+    main{
+
+        width: 100%;
+        height: 100vh;
+        background: url('../photos/back_login.png');
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    section{
+
+        height: 100vh;
+        width: 90%;
+    }
+    form{
+
+        width: 100%;
+        margin-bottom: 30%;
+    }
+    #img{
+
+        width: 0;
+        height: 0;
+    }
 }
