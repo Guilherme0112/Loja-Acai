@@ -10,6 +10,19 @@ html{
 
     background-color: rgb(156, 0, 104);
 }
+
+/* Line bottom of options */
+
+.line-of-options{
+
+    color: white;
+    text-decoration: none;
+}
+.line-of-options:hover{
+
+    text-decoration: underline;
+}
+
 /* Top from the screen */
 
 header{
@@ -17,7 +30,6 @@ header{
     background-color: rgb(93, 0, 62);
     height: 70px;
     width: 100%;
-   
 }
 header div{
 
@@ -25,27 +37,22 @@ header div{
     height: 100%;
     display: flex;
     align-items: center;
-}
-header div a{
 
-    text-decoration: none;
-    color: white;
-    margin: 30px;
 }
-header div a:hover{
+header i{
 
-    text-decoration: underline;
-}
-#user{
     position: absolute;
     right: 40px;
     top: 23px;
     font-size: 25px;
     cursor: pointer;
     color: white;
-
 }
-#user:hover{
+header div a{
+
+    margin: 30px;
+}
+i:hover{
 
     transform: scale(1.1);
     transition: 0.5s;
@@ -86,24 +93,16 @@ header div a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15%;
-    
+    margin-bottom: 15%;  
 }
-#email{
+.input-email-and-password{
 
     height: 30px;
     width: 200px;
     border-radius: 10px;
     padding-left: 10px;
     margin: 20px 0;
-}
-#password{
-
-    height: 30px;
-    width: 200px;
-    border-radius: 10px;
-    padding-left: 10px;
-    margin: 20px 0;
+    border: 1px solid white;
 }
 #button-login{
 
@@ -114,7 +113,6 @@ header div a:hover{
     cursor: pointer;
     font-size: 20px;
     color: rgb(93, 0, 62);
-    
 }
 #button-login:hover{
 
@@ -124,17 +122,9 @@ header div a:hover{
     border: 1px solid white;
 }
 #button-login:active{
+
     background-color: white;
     color: rgb(93, 0, 62);
-}
-main div a {
-
-    color: white;
-    text-decoration: none;
-}
-main div a:hover{
-
-    text-decoration: underline; 
 }
 
 /* Part of the promotions e best stores */
@@ -144,14 +134,14 @@ main div a:hover{
 #best-stores-and-promotions{
 
     width: 100%;
-    background: linear-gradient(to bottom, rgb(93, 0, 62), rgb(156, 0, 104) );
-    
+    background: linear-gradient(to bottom, rgb(93, 0, 62), rgb(156, 0, 104) );  
 }
-section #best-stores h2{
+.titles-page{
 
     width: 100%;
     margin-top: 30px;
     margin-left: 30px;
+    color: white;
 }
 #best-stores{
 
@@ -160,9 +150,8 @@ section #best-stores h2{
     align-items: center;
     flex-wrap: wrap;
     color: white;
-
 }
-section #best-stores div{
+.card-stores{
 
     height: 100px;
     width: 200px;
@@ -171,11 +160,26 @@ section #best-stores div{
     float: left;
     border-radius: 5px;
     cursor: pointer;
+    overflow: hidden;
 }
-section #best-stores div:hover{
+.card-stores:hover{
 
     border: 1px solid rgba(255, 255, 255);
     transition: 0.5s;
+    box-shadow: 0px 0px 3px white;
+}
+.card-stores img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+}
+.card-stores img:hover{
+
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 /* Promotions of store */
@@ -186,52 +190,35 @@ section #best-stores div:hover{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
 }
-#promotions h2{
-
-    color: white;
-    width: 100%;
-    margin-left: 30px;
-    margin-bottom: 30px;
-}
-#promotions div{
+.card-promotions{
 
     height: 250px;
     width: 200px;
     margin: 50px 10px 50px 10px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
 }
-#promotions div:hover{
+.card-promotions:hover{
 
     border: 1px solid white;
     transition: 0.5s;
+    box-shadow: 0px 0px 3px white;
 }
-.card{
-
-    height: 400px;
-    width: 270px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 50px 10px 50px 10px;
-    float: left;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.card img{
+.card-promotions img{
 
     width: 100%;
-    height: 80%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    height: 100%;
     object-fit: cover;
+    webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
 }
-.card button{
+.card-promotions img:hover{
 
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: 20%;
-    width: 100%;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 /* Outers */
@@ -243,16 +230,17 @@ section #best-stores div:hover{
    align-items: center;
    flex-wrap: wrap;
 }
-section #outers h2{
+.card-outers{
 
-    width: 100%;
-    margin-left: 30px;
-    margin-top: 10px;
-    color: white;
-    
+    height: 340px;
+    width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    margin: 50px;
+    cursor: pointer;
 }
 
-section #outers div:hover{
+.card-outers:hover{
 
     border: 1px solid white;
     transition: 0.5s;
@@ -268,36 +256,12 @@ footer{
     display: flex;
     align-items: center;
     justify-content: end;
-    
-}
-footer div a{
-
-    text-decoration: none;
 }
 #opcoes{
 
     display: grid;
     width: 150px;
     font-size: 13px;
-     
-}
-#footer_qs:hover{
-
-    text-decoration: underline;
-    
-}
-#footer_suporte:hover{
-
-    text-decoration: underline;
-}
-#footer_wpp:hover{
-
-    text-decoration: underline;
-}
-#footer_instagram:hover{
-
-    text-decoration: underline;
-    
 }
 
 /* Screen with a maximum width of 768 pixels */
@@ -308,8 +272,6 @@ footer div a{
 
     header div a{
 
-        text-decoration: none;
-        color: white;
         margin: 10px;
     }
 
@@ -328,29 +290,28 @@ footer div a{
 
 /* reduce of box */
 
-    section #best-stores div{
+    .card-stores{
 
         height: 70px;
         width: 140px;
         margin: 50px 10px 50px 10px;
-        
     }
-    section #promotions div{
+    .card-promotions{
 
         height: 150px;
         width: 100px;
     }
-    section #outers div{
+    .card-outers{
 
         height: 240px;
         width: 150px;
+        margin: 50px 10px 50px 10px;
     }
+
     /* Centralize of title */
 
-    section section{
+    .titles-page{
 
         text-align: center
     }
-    
-
 }
