@@ -58,7 +58,7 @@ i:hover{
     transition: 0.5s;
 }
 
-/* Primary part from the page, box from the login and background 1 */
+/* Primary part from the page, box from the title and background 1 */
 
 #main-page{
 
@@ -71,60 +71,30 @@ i:hover{
     align-items: center;
     justify-content: end;  
 }
-#box-login{
+#box-title{
 
-    height: 500px;
     width: 400px;
-    background-color: rgb(93, 0, 62, 0.7);
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 10px black;
-    border-radius: 10px;
-    margin-right: 10%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-}
-#box-size-login{
-    
     flex-wrap: wrap;
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15%;  
-}
-.input-email-and-password{
-
-    height: 30px;
-    width: 200px;
-    border-radius: 10px;
-    padding-left: 10px;
-    margin: 20px 0;
-    border: 1px solid white;
-}
-#button-login{
-
-    margin: 20px 0;
-    height: 40px;
-    width: 200px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
     color: rgb(93, 0, 62);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
 }
-#button-login:hover{
+#title-one{
 
-    background-color: rgb(93, 0, 62, 0);
-    color: white;
-    transition: 0.2s;
-    border: 1px solid white;
+    width: 100%;
+    font-size: 70px;
 }
-#button-login:active{
+#title-two{
 
-    background-color: white;
-    color: rgb(93, 0, 62);
+    font-size: 40px;
+    width: 100%;
+    color: rgb(214, 214, 214);
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgb(93, 0, 62);
 }
 
 /* Part of the promotions e best stores */
@@ -156,7 +126,7 @@ i:hover{
     height: 100px;
     width: 200px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 50px 10px 50px 10px;
+    margin: 50px 10px;
     float: left;
     border-radius: 5px;
     cursor: pointer;
@@ -195,11 +165,13 @@ i:hover{
 
     height: 250px;
     width: 200px;
-    margin: 50px 10px 50px 10px;
+    margin: 50px 10px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
+    display: inline-block;
+    
 }
 .card-promotions:hover{
 
@@ -213,12 +185,14 @@ i:hover{
     height: 100%;
     object-fit: cover;
     webkit-transition: -webkit-transform .5s ease;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
 }
 .card-promotions img:hover{
 
     -webkit-transform: scale(1.1);
-    transform: scale(1.1)
+    transform: scale(1.1);
+    filter: brightness(20%);
+    transition: 0.5s;
 }
 
 /* Outers */
@@ -283,9 +257,9 @@ footer{
         align-items: center;
         justify-content: center;  
     }
-    #box-login{
+    #title-one, #title-two{
 
-        margin: 0;
+        opacity: 0;
     }
 
 /* reduce of box */
@@ -294,18 +268,19 @@ footer{
 
         height: 70px;
         width: 140px;
-        margin: 50px 10px 50px 10px;
+        margin: 20px 10px;
     }
     .card-promotions{
 
         height: 150px;
         width: 100px;
+        margin: 20px 10px;
     }
     .card-outers{
 
         height: 240px;
         width: 150px;
-        margin: 50px 10px 50px 10px;
+        margin: 20px 10px;
     }
 
     /* Centralize of title */
