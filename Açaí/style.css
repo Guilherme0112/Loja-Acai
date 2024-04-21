@@ -161,6 +161,30 @@ i:hover{
     align-items: center;
     flex-wrap: wrap;
 }
+#promotions section{
+    margin: 10px auto;
+}
+.title-products a{
+
+    color: white;
+}
+.title-products{
+    height: 40px;
+    width: 220px;
+    margin-top: -40px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;  
+    text-overflow: ellipsis;
+    text-align: center;
+    color: white;
+}
+.price-products{
+
+    font-size: 20px;
+    text-align: center;
+}
 .card-promotions{
 
     height: 250px;
@@ -184,14 +208,13 @@ i:hover{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    webkit-transition: -webkit-transform .5s ease;
+    webkit-transition: -webkit-transform 0.5s ease;
     transition: transform 0.5s ease;
 }
 .card-promotions img:hover{
 
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-    filter: brightness(20%);
     transition: 0.5s;
 }
 
@@ -208,16 +231,25 @@ i:hover{
 
     height: 340px;
     width: 250px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 10px;
     margin: 50px;
     cursor: pointer;
 }
-
 .card-outers:hover{
 
-    border: 1px solid white;
-    transition: 0.5s;
+    box-shadow: 0px 0px 5px black;
+    transition: .5s;
+}
+.img-outers{
+    margin-top: 10px;
+    width: 90%;
+    height: 40%;
+    border-radius: 10px;
+    background-color: rgb(156, 0, 104);
 }
 /* footer of page */
 
@@ -270,11 +302,23 @@ footer{
         width: 140px;
         margin: 20px 10px;
     }
+    .title-products{
+
+        margin-top: -10px;
+        margin: auto 10px;
+        font-size: 10px;
+        height: 25px;
+        width: 100px;
+    }
+    .price-products{
+
+        font-size: 15px;
+    }
     .card-promotions{
 
         height: 150px;
         width: 100px;
-        margin: 20px 10px;
+        margin: 10px;
     }
     .card-outers{
 
@@ -282,7 +326,7 @@ footer{
         width: 150px;
         margin: 20px 10px;
     }
-
+    
     /* Centralize of title */
 
     .titles-page{
