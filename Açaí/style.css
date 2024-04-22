@@ -12,37 +12,45 @@ html, body{
     background-color: rgb(156, 0, 104);
 }
 
-/* Line bottom of options */
-
-.line-of-options{
-
-    text-decoration: none;
-}
-.line-of-options:hover{
-
-    text-decoration: underline;
-}
 /* Heade of page */
+
 header{
 
     width: 100%;
     height: 50px;
     background-color: rgb(156, 0, 104);
+    display: flex;
 }
-header div{
+.header_1{
 
     height: 100%;
-    width: 50%;
+    width: 80%;
     margin: auto 20px;
     display: flex;
     justify-content: start;
     align-items: center;
 }
+.header_2{
+
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    align-items: center;
+    width: 20%;
+    font-size: 20px;
+}
+.header_2 a{
+
+    cursor: pointer;
+    color: white;
+}
 header div a{
 
     margin: auto 20px;
 }
+
 /* Main page */
+
 main{
 
     width: 100%;
@@ -55,7 +63,7 @@ main{
     background-size: cover;
     background-position: center ;
 }
-#help-in-search{
+#help-in-search{ /* part center of page */
 
     width: 100%;
     display: flex;
@@ -63,80 +71,30 @@ main{
     align-items: center;
     flex-wrap: wrap;
 }
-.help-in-search-box{ /* box from img and title */
 
-    width: 230px;
-    height: 330px;
-    background-color: #cbcecf;
-    margin: 40px;
-    border-radius: 10px;
-    display: grid;
+/* best stores */
+
+.best-stores{
+
+    width: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 7px black;
-
-}
-.img-box-help-in-search{ /* img of box */
-
-    height: 90%;
-    width: 90%;
-    margin: 11px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid black;
-}
-.img-box-help-in-search img{ /* editing the image */
-
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-.title-of-box{
-
-    text-align: center;
-    height: 20px;    
-    margin-bottom: 30px;
-}
-.help-in-search-box button{ /* button of box */
-
-    height: 40px;
-    width: 100%;
-    background-color: black;
-    border-radius: 20px;
-    color: white;
-    cursor: pointer;
-}
-.help-in-search-box button:hover{
-
-    background-color: rgba(0, 0, 0, 0.95);
-    transition: .3s;
+    flex-wrap: wrap;
 }
 
-/* Box of options */
+/* novidades */
 
-.help-in-search-box button{
-
-    margin: 15px;
-    width: 200px;
-}
-.help-in-search-box p{
-    
-    padding: 10px;
-    text-align: center;
-}
-.help-in-search-box h3{
-
-    margin-top: 10px;
-    text-align: center;
-}
-/* carrossel */
-
-.carrossel{
+.novidades{
 
     width: 100%;
-    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 /* info of page */
+
 .info{
 
     width: 100%;
@@ -147,6 +105,7 @@ main{
 }
 
 /* footer of page */
+
 footer{
 
     width: 100%;
@@ -163,4 +122,3 @@ footer{
     width: 150px;
     font-size: 13px;
 }
-
