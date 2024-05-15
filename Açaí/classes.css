@@ -1,5 +1,11 @@
 /* settings of box */
+html, body{
 
+    width: 100%;
+    height: 100vh;
+    /*background: linear-gradient(180deg, rgb(73, 0, 49), rgb(156, 0, 104));*/
+    background-color: rgb(156, 0, 104);
+}
 .box{
 
     width: 230px;
@@ -78,13 +84,17 @@
     margin: 20px;
     background-color: #cbcecf;
     cursor: pointer;
- }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
  .box-nov:hover{
 
     transform: scale(1.02);
     transition: .7s;
  }
-
+ 
  /* box-stores */
 
 .box-stores{
@@ -101,12 +111,6 @@
     transform: scale(1.03);
     transition: .3s;
 }
-
-
-
-
-
-
 
  /* settings of page */
 
