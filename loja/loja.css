@@ -1,0 +1,54 @@
+body, html{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(156, 0, 104);
+}
+.first-part{
+
+    width: 100%;
+    height: 300px;
+    outline: 1px solid white;
+}
+.photoUser{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px;
+}
+.nome-user{
+
+    font-size: 25px;
+    color: white;
+    padding-left: 55px;
+}
+main{
+
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* msg zero products */
+
+.msg-product{
+
+    padding: 0 20px;
+    display: flex;
+    height: 200px;
+    width: 300px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    outline: 2px solid white;
+    color: white;
+    font-size: 20px;
+}
+.msg-product a{
+
+    font-size: 15px;
+    color: white;
+}

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+main{
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: end;
+    
+}
+section{
+
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(to bottom, rgb(93, 0, 62) 20%, rgb(156, 0, 104));
+    box-shadow: 0px 0px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+section div{
+
+    width: 100%;
+    height: 40px;
+    margin-left: 20px;
+}
+#back{
+
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    padding: 0px 2px 3px 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#back:hover{
+
+    background-color: rgb(156, 0, 104);
+}
+form{
+
+    height: 45%;
+    width: 90%;
+    padding: 0px 50px 0px 50px;
+    display: grid;
+    margin-bottom: 10%;
+   
+}
+label{
+
+    color: white;
+}
+input{
+
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin: 10px 0px 10px 0px;
+}
+a{
+
+    color: white;
+    margin: 5px 0px 10px 0px;
+    text-decoration: none;
+    width: 150px;
+}
+a:hover{
+
+    text-decoration: underline;
+}
+button{
+
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(93, 0, 62);
+    cursor: pointer;
+    font-size: 20px;
+}
+button:hover{
+
+    background-color: rgb(93, 0, 62);
+    color: white;
+    transition: 0.3s;
+    border: 1px solid white;
+}
+#img{
+
+    background: url('../assets/back_login.png');
+    background-size: cover;
+    background-position: center center;
+    width: 60%;
+    height: 100vh;
+
+}
+@media (max-width: 768px){
+
+    
+    main{
+
+        width: 100%;
+        height: 100vh;
+        background: url('../assets/back_login.png');
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    section{
+
+        height: 100vh;
+        width: 90%;
+    }
+    form{
+
+        width: 100%;
+        margin-bottom: 30%;
+    }
+    #img{
+
+        width: 0;
+        height: 0;
+    }
+}

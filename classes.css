@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Tilt Neon;
+    border: 0;
+    outline: 0;
+}
+/* Heade of page */
+
+header{
+
+    width: 100%;
+    height: 50px;
+    background-color: rgb(156, 0, 104);
+    outline: 1px solid white;
+    display: flex;
+}
+.header_1{
+
+    height: 100%;
+    width: 80%;
+    margin: auto 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.header_2{
+
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    align-items: center;
+    width: 20%;
+    font-size: 20px;
+}
+.header_2 a{
+
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+header div a{
+
+    margin: auto 20px;
+}
+.icon{
+
+    width: 50px;
+    height: 50px;
+}
+
+/* settings of box */
+
+.box{
+
+    width: 230px;
+    height: 330px;
+    background-color: #cbcecf;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+    transition: .3s;
+}
+.box:hover{
+
+    box-shadow: 0px 0px 7px black;
+}
+.img{
+
+    height: 170px;
+    width: 220px;
+    margin: 11px;
+    border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.title-box{
+
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    color: black;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    
+}
+.preco{
+
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+.ex-preco{
+    width: 100%;
+    height: 15px;
+    text-align: start;
+    font-size: 12px;
+    /* padding-left: 30px; */
+    color: black;
+}
+/* box in novidades*/
+
+.box-nov{
+
+    height: 250px;
+    width: 320px;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #cbcecf;
+    cursor: pointer;
+ }
+ .box-nov:hover{
+
+    transform: scale(1.02);
+    transition: .7s;
+ }
+
+ /* box-stores */
+
+.box-stores{
+
+    width: 200px;
+    height: 100px;
+    background-color: #cbcecf;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+}
+.box-stores:hover{
+
+    transform: scale(1.03);
+    transition: .3s;
+}
+
+
+
+
+
+
+
+ /* settings of page */
+
+.line-of-options{ /* Line bottom of options */
+
+    text-decoration: none;
+}
+.line-of-options:hover{
+
+    text-decoration: underline;
+}
+ .title{ /* title of page */
+
+    margin: 20px 50px;
+    width: 100%;
+    color: white;
+ }

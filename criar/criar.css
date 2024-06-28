@@ -1,0 +1,103 @@
+html, body{
+
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(156, 0, 104);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+header div a{
+    color: white;
+}
+form{
+
+    width: 500px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    outline: 2px solid white;
+}
+label{
+    width: 100%;
+    height: 20px;
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: start;
+    padding-left: 30px;
+    color: white;
+}
+textarea{
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    resize: none;
+}
+input{
+
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    transition: 0.3s;
+}
+.input:hover, .input:focus{
+    
+    outline: 2px solid rgb(93, 0, 62);
+}
+input[type='submit']{
+
+    color: rgb(93, 0, 62);
+    cursor: pointer;
+    font-size: 20px;
+    margin: 10px;
+}
+input[type='submit']:hover{
+
+    background-color: rgb(93, 0, 62);
+    color: white;
+    border: 1px solid white;
+}
+#preco{
+   width: 100px;
+   margin-right: 350px;
+}
+#photo{
+    display: none;
+}
+#labelPhoto{
+
+    margin: 10px;
+    width: 200px;
+    height: 100px;
+    padding: 0;
+    background-color: white;
+    color: rgb(93, 0, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+#labelPhoto:hover{
+    background-color: rgb(93, 0, 62);
+    color: white;
+}
+#img{
+
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    margin: 20px;
+    object-position: center;
+    object-fit: contain;
+    background-color: black;
+}
+footer{
+
+    width: 100%;
+    height: 30px;
+}
