@@ -32,7 +32,7 @@
                 <img src="../assets/icone.ico" alt="" class="icon">
             </a>
             <a href="../promotions/promotions.php" class="line-of-options" style="color: white;">Promoções</a>
-            <a href="" class="line-of-options" style="color: white;">Lojas</a>
+            <a href="../produto/meus-produtos/meusprodutos.php" class="line-of-options" style="color: white;">Meus Produtos</a>
             <a href="../criar/criar.php" class="line-of-options" style="color: white;">Postar Produto</a>
             <a href="../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>
         </div>
@@ -59,7 +59,22 @@
                         </p>
                         ";
             } else {
-                echo "";
+                while($i = $sql->fetch_assoc()){
+                    $idP = $i['idProduct'];
+                    $photoP = $i['photoProduct'];
+                    $nomeP = $i['nomeProduct'];
+                    $precoP = $i['price'];
+                    echo "
+                
+                        <a href='../produto/produto.php?p=$idP' class='box'>
+                            <img src='../$photoP' class='img'>
+                            <p class='title-box line-of-options'>$nomeP</p>
+                            <span class='preco'>
+                            <del class='ex-preco'>R$ $precoP</del>
+                            R$ $precoP
+                        </span>
+                        </a>";
+                }
             }
         ?>
     </main>

@@ -48,14 +48,25 @@
 
     <section id="help-in-search">
         <h2 class="title">Produtos que talvez você goste!</h2>
-        <a href="" class="box">
-            <img src="photos/img_1.png" class="img">
-            <p class="title-box line-of-options">Pote de açaí</p>
-            <span class="preco">
-                <del class="ex-preco">R$ 18,99</del>
-                R$ 13,99
-            </span>
-        </a>
+        <?php
+            $sql = mysqli_query($conexao, "SELECT * FROM products LIMIT 8");
+            while($i = $sql->fetch_assoc()){
+                $idP = $i['idProduct'];
+                $nomeP = $i['nomeProduct'];
+                $precoP = $i['price'];
+                $photoP = $i['photoProduct'];
+            }
+            echo "<a href='produto/produto.php?p=$idP' class='box'>
+                    <img src='$photoP' class='img'>
+                    <p class='title-box line-of-options'>$nomeP</p>
+                    <span class='preco'>
+                        <del class='ex-preco'>R$ $precoP</del>
+                        R$ $precoP
+                    </span>
+                </a>";
+
+        ?>
+            
     </section>
     <section class="best-stores">
         <h2 class="title">Melhores lojas</h2>

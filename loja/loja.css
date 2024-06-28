@@ -30,25 +30,3 @@ main{
     justify-content: center;
     align-items: center;
 }
-/* msg zero products */
-
-.msg-product{
-
-    padding: 0 20px;
-    display: flex;
-    height: 200px;
-    width: 300px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 10px;
-    outline: 2px solid white;
-    color: white;
-    font-size: 20px;
-}
-.msg-product a{
-
-    font-size: 15px;
-    color: white;
-}

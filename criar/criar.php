@@ -20,8 +20,9 @@
             $photo = $_FILES['photo']['name'];
             $routePhoto = "../database/arquivos/$idSession/$photo";
             $mover = move_uploaded_file($_FILES['photo']['tmp_name'], "$routePhoto");
+            $route = "database/arquivos/$idSession/$photo";
             if($mover){
-                $sql = mysqli_query($conexao, "INSERT INTO products VALUES (default, '$nome', $idSession, '$photo', '$descricao', $preco, default)");
+                $sql = mysqli_query($conexao, "INSERT INTO products VALUES (default, '$nome', $idSession, '$route', '$descricao', $preco, default)");
                 if($sql){
                     header('location: ../loja/loja.php');
                 }

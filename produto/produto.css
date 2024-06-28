@@ -1,0 +1,65 @@
+body, html{
+
+    width: 100%;
+    height: 100vh;    
+    background-color: rgb(156, 0, 104);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+main{
+    margin: 20px;
+    outline: 2px solid white;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+.section_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-section{
+
+    border-radius: 10px;
+    width: 500px;
+    margin: 10px;
+}
+.box-info{
+    margin-top: 20px;
+    border-radius: 7px;
+    padding: 10px;
+    height: 100%;
+    width: 254px;
+    color: rgb(156, 0, 104);
+}
+.box-info a{
+    color: rgb(156, 0, 104);
+}
+.section_2 h1, p{
+    
+    width: 234px;
+}
+.section_2 h1{
+    margin-top: 5px;
+    font-size: 17px;
+}
+.btn-buy{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    background-color: rgb(18, 173, 18);
+    height: 40px;
+    width: 234px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .3s;
+    margin: 30px 0;
+}
+.btn-buy:hover{
+    background-color: rgb(0, 140, 0);
+}
