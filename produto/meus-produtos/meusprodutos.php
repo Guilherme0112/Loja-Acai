@@ -2,7 +2,7 @@
     session_start();
     include_once('../../database/conexao.php');
     if(!isset($_SESSION['email'])){
-        header('location: ../index.php');
+        header('location: ../../index.php');
     }
     $email = $_SESSION['email'];
     $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
@@ -48,12 +48,13 @@
                     $nomeP = $i['nomeProduct'];
                     $precoP = $i['price'];
                     $photoP = $i['photoProduct'];
+                    $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
                     
-                    echo "<a href='../../produto/produto.php?p=$idP' class='box'>
+                    echo "<a href='../editar/editar.php?p=$idP' class='box'>
                             <img src='../../$photoP' class='img'>
                             <p class='title-box line-of-options'>$nomeP</p>
                             <span class='preco'>
-                                <del class='ex-preco'>R$ $precoP</del>
+                                <del class='ex-preco'>R$ $exPreco</del>
                                 R$ $precoP
                             </span>
                         </a>";

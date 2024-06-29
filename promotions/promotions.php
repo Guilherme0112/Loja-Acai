@@ -44,19 +44,33 @@
     </header>
     <main>
         <?php
-            $sql = mysqli_query($conexao, "SELECT * FROM products");
+            $sql = mysqli_query($conexao, "SELECT * FROM products ORDER BY RAND()");
             if(mysqli_num_rows($sql) == 0){
                 echo "
                         <p class='msg-product'>
                             Não há produtos aqui
-                            <a href='' class='line-of-options'>Postar agora</a>
                         </p>
                         ";
             } else {
-                echo "";
+                while($i = $sql->fetch_assoc()){
+                    $idP = $i['idProduct'];
+                    $nomeP = $i['nomeProduct'];
+                    $precoP = $i['price'];
+                    $photoP = $i['photoProduct'];
+                    $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
+
+                    echo "<a href='../produto/produto.php?p=$idP' class='box'>
+                            <img src='../$photoP' class='img'>
+                            <p class='title-box line-of-options'>$nomeP</p>
+                            <span class='preco'>
+                                <del class='ex-preco'>R$ $exPreco</del>
+                                R$ $precoP
+                            </span>
+                        </a>";
+                }
+               
             }
         ?>
     </main>
 </body>
-
 </html>

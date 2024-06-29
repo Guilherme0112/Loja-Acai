@@ -33,7 +33,7 @@
             </a>
             <a href="../promotions/promotions.php" class="line-of-options" style="color: white;">Promoções</a>
             <a href="../produto/meus-produtos/meusprodutos.php" class="line-of-options" style="color: white;">Meus Produtos</a>
-            <a href="../criar/criar.php" class="line-of-options" style="color: white;">Postar Produto</a>
+            <a href="../criar/criar.php" class="line-of-options" style="color: white;">Criar Produto</a>
             <a href="../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>
         </div>
         <div class='header_2'>
@@ -64,13 +64,14 @@
                     $photoP = $i['photoProduct'];
                     $nomeP = $i['nomeProduct'];
                     $precoP = $i['price'];
+                    $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
                     echo "
                 
                         <a href='../produto/produto.php?p=$idP' class='box'>
                             <img src='../$photoP' class='img'>
                             <p class='title-box line-of-options'>$nomeP</p>
                             <span class='preco'>
-                            <del class='ex-preco'>R$ $precoP</del>
+                            <del class='ex-preco'>R$ $exPreco</del>
                             R$ $precoP
                         </span>
                         </a>";

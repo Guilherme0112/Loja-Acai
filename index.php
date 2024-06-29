@@ -49,21 +49,24 @@
     <section id="help-in-search">
         <h2 class="title">Produtos que talvez você goste!</h2>
         <?php
-            $sql = mysqli_query($conexao, "SELECT * FROM products LIMIT 8");
+            $sql = mysqli_query($conexao, "SELECT * FROM products ORDER BY RAND() LIMIT 8");
             while($i = $sql->fetch_assoc()){
                 $idP = $i['idProduct'];
                 $nomeP = $i['nomeProduct'];
                 $precoP = $i['price'];
                 $photoP = $i['photoProduct'];
-            }
-            echo "<a href='produto/produto.php?p=$idP' class='box'>
+                $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
+
+                echo "<a href='produto/produto.php?p=$idP' class='box'>
                     <img src='$photoP' class='img'>
                     <p class='title-box line-of-options'>$nomeP</p>
                     <span class='preco'>
-                        <del class='ex-preco'>R$ $precoP</del>
+                        <del class='ex-preco'>R$ $exPreco</del>
                         R$ $precoP
                     </span>
                 </a>";
+            }
+            
 
         ?>
             

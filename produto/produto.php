@@ -67,7 +67,7 @@
                 <h1>Nome</h1>
                 <p><?php echo $nomeP ?></p>
                 <h1>Descriçao</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati at asperiores suscipit, quae sint veniam architecto ex. Non consectetur suscipit nihil consequatur fugiat quos tenetur saepe nostrum. Consequatur, repellendus asperiores Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis soluta inventore </p>
+                <p><?php echo $descricaoP ?></p>
                 <h1>Dono</h1>
                 <a href='<?php echo "../loja/loja.php?l=$idUser" ?>' class="line-of-options"><?php echo $nomeUser ?></a>
                 <h1>Preço</h1>
