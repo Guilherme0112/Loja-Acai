@@ -4,6 +4,18 @@
     if(!isset($_SESSION['email']) || empty($_GET['p'])){
         header('location: ../../index.php');
     }
+
+    function nomePhoto($nameEncripty){
+        $tamanhoString = 20;
+        $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $nameEncripty = '';
+
+        for ($i = 0; $i < $tamanhoString; $i++) {
+            $nameEncripty .= $caracteres[rand(0, strlen($caracteres) - 1)];
+        }
+        return $nameEncripty;
+    }
+
     $email = $_SESSION['email'];
     $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
     $r = $sql->fetch_assoc();
@@ -11,6 +23,9 @@
     //
     $idP = $_GET['p'];
     $sql = mysqli_query($conexao, "SELECT * FROM products WHERE idProduct = $idP");
+    if(mysqli_num_rows($sql) == 0){
+        header('location: ../../index.php');
+    }
     $r = $sql->fetch_assoc();
     $ownerP = $r['ownerProduct'];
     if($idSession != $ownerP){
@@ -18,7 +33,7 @@
     }
     $precoP = $r['price'];
     $nomeP = $r['nomeProduct'];
-    $descricao = $r['description'];
+    $descricao = $r['descricao'];
     $photoP = $r['photoProduct'];
 
     if(isset($_POST['submit'])){
@@ -35,9 +50,11 @@
                 unlink("../../$photoP");
             }
             $photo = $_FILES['photo']['name'];
-            $routePhoto = "../../database/arquivos/$idSession/$photo";
-            $mover = move_uploaded_file($_FILES['photo']['tmp_name'], "$routePhoto");
-            $route = "database/arquivos/$idSession/$photo";
+            $ext = pathinfo($photo, PATHINFO_EXTENSION);
+
+            $newPhoto = nomePhoto($newPhoto);
+            $route = "database/arquivos/$idSession/$newPhoto." . $ext;
+            $mover = move_uploaded_file($_FILES['photo']['tmp_name'], "../../$route");
             if($mover){
                 $sql = mysqli_query($conexao, "UPDATE products SET photoProduct = '$route' WHERE idProduct = $idP");
             }
@@ -47,11 +64,19 @@
         }
         if(strlen($descricao) < 301){
             $descricao = mysqli_escape_string($conexao, $descricao);
-            $sql = mysqli_query($conexao, "UPDATE products SET description = '$description' WHERE idProduct = $idP");
+            $sql = mysqli_query($conexao, "UPDATE products SET descricao = '$descricao' WHERE idProduct = $idP");
         }
         header('location: ../meus-produtos/meusprodutos.php');
     }
-    
+    if(isset($_POST['delete'])){
+        if(file_exists("../../$photoP")){
+            unlink("../../$photoP");
+        }
+        $sql = mysqli_query($conexao, "DELETE FROM products WHERE idProduct = $idP");
+        if($sql){
+            header('location: ../meus-produtos/meusprodutos.php');
+        }
+    };
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -94,6 +119,7 @@
             <img id="img" src="<?php echo "../../$photoP" ?>">
             <span style="width: 100%;"></span>
             <input type="submit" name='submit' value="Enviar">
+            <input type="submit" name="delete" id='delete' value="Apagar Produto">
         </form>
     </main>
 </body>

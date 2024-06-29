@@ -17,23 +17,30 @@ function vali(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    const fileInput = document.querySelector('#photo')
-        const imagePreview = document.getElementById('img')
+    const fileInput = document.querySelector('#photo');
+    const imagePreview = document.getElementById('img');
+    fileInput.addEventListener('change', function() {
+        imagePreview.style.maxWidth = "200px";
+        imagePreview.style.maxHeight = "200px";
+        imagePreview.style.outline = "2px solid white";
+        const file = this.files[0];
 
-        fileInput.addEventListener('change', function() {
-            imagePreview.style.maxWidth = "200px";
-            imagePreview.style.maxHeight = "200px";
-            imagePreview.style.outline = "2px solid white";
-            const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
 
-            if (file) {
-                const reader = new FileReader();
+            reader.onload = function(event) {
+                imagePreview.src = event.target.result;
+            };
 
-                reader.onload = function(event) {
-                    imagePreview.src = event.target.result;
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
+            reader.readAsDataURL(file);
+        }
+    });
+    var delet = document.getElementsById('delete')[0];
+    delet.addEventListener('click', function(){
+        var cofirm = cofirm("Você realmente deseja apagar este produto?");
+        if(!cofirm){
+            return false; 
+        }
     })
+});
+

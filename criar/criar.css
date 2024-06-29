@@ -90,7 +90,6 @@ input[type='submit']:hover{
 #img{
 
     aspect-ratio: 1/1;
-    width: 200px;
     border-radius: 10px;
     margin: 20px;
     object-position: center;

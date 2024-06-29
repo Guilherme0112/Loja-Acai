@@ -62,7 +62,7 @@
             } else {
                 echo "<p class='msg-product'>
                         Você não postou nenhum produto
-                        <a href='../criar/criar.php' class='line-of-options'>Postar agora</a>
+                        <a href='../../criar/criar.php' class='line-of-options'>Postar agora</a>
                     </p>"; 
             }
         ?>

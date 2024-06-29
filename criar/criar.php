@@ -4,6 +4,17 @@
     if(!isset($_SESSION['email'])){
         header('location: ../index.php');
     }
+
+    function nomePhoto($nameEncripty){
+        $tamanhoString = 20;
+        $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $nameEncripty = '';
+
+        for ($i = 0; $i < $tamanhoString; $i++) {
+            $nameEncripty .= $caracteres[rand(0, strlen($caracteres) - 1)];
+        }
+        return $nameEncripty;
+    }
     //
     $email = $_SESSION['email'];
     $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
@@ -18,11 +29,15 @@
         $photo = $_FILES['photo']['name'];
         if(strlen($nome) > 2 && strlen($nome) < 50 && isset($_FILES['photo']['name']) && strlen($descricao) < 301){
             $photo = $_FILES['photo']['name'];
-            $routePhoto = "../database/arquivos/$idSession/$photo";
-            $mover = move_uploaded_file($_FILES['photo']['tmp_name'], "$routePhoto");
-            $route = "database/arquivos/$idSession/$photo";
+            $ext = pathinfo($photo, PATHINFO_EXTENSION);
+            //
+            
+            $newPhoto = nomePhoto($newPhoto);
+            $newRoute = "database/arquivos/$idSession/$newPhoto." . $ext;
+
+            $mover = move_uploaded_file($_FILES['photo']['tmp_name'], "../$newRoute");
             if($mover){
-                $sql = mysqli_query($conexao, "INSERT INTO products VALUES (default, '$nome', $idSession, '$route', '$descricao', $preco, default)");
+                $sql = mysqli_query($conexao, "INSERT INTO products VALUES (default, '$nome', $idSession, '$newRoute', '$descricao', $preco, default)");
                 if($sql){
                     header('location: ../loja/loja.php');
                 }

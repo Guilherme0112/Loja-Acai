@@ -5,12 +5,16 @@
     if(empty($idP)){
         header('location: ../index.php');
     }
+    $sql = mysqli_query($conexao, "SELECT * FROM products WHERE idProduct = $idP");
+    if(mysqli_num_rows($sql) == 0){
+        header('location: ../index.php');
+    }
     $sql = mysqli_query($conexao, "SELECT *, date_format(productcreate, '%d/%m/%Y') FROM products WHERE idProduct = $idP");
     $r = $sql->fetch_assoc();
     $nomeP = $r['nomeProduct'];
     $donoP = $r['ownerProduct'];
     $photoP = $r['photoProduct'];
-    $descricaoP = $r['description'];
+    $descricaoP = $r['descricao'];
     $precoP = $r['price'];
     $sinceP = $r["date_format(productcreate, '%d/%m/%Y')"];
 
@@ -31,6 +35,7 @@
     <link rel="stylesheet" href="../classes.css">
     <link rel="shortcut icon" href="../assets/icone.ico" type="image/x-icon">
     <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="shortcut icon" href="../assets/icone.ico" type="image/x-icon">
     <title><?php echo $nomeP ?></title>
 </head>
 <body>
