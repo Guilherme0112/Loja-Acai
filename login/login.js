@@ -1,4 +1,3 @@
 function back(){
-
-    location.href = '../index.php'
+    history.go(-1);
 }

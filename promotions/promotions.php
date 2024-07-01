@@ -23,7 +23,6 @@
             </a>
             <a href="" class="line-of-options" style="color: white;">Lojas</a>
             <a href="" class="line-of-options" style="color: white;">Ajuda</a>
-            <a href="../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>
         </div>
         <div class='header_2'>
         <?php 

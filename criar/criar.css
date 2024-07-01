@@ -59,7 +59,6 @@ input[type='submit']:hover{
 
     background-color: rgb(93, 0, 62);
     color: white;
-    border: 1px solid white;
 }
 #preco{
    width: 100px;

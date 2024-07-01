@@ -31,7 +31,7 @@
             <a href="../index.php">
                 <img src="../assets/icone.ico" alt="" class="icon">
             </a>
-            <a href="../promotions/promotions.php" class="line-of-options" style="color: white;">Promoções</a>
+            <a href="../pedidos/pedidos.php" class="line-of-options" style="color: white;">Meus Pedidos</a>
             <a href="../produto/meus-produtos/meusprodutos.php" class="line-of-options" style="color: white;">Meus Produtos</a>
             <a href="../criar/criar.php" class="line-of-options" style="color: white;">Criar Produto</a>
             <a href="../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>

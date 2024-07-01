@@ -72,7 +72,7 @@
         <label for="nome">Nome do Produto: *</label>
         <input type="text" name="nome" id="nome" class="input" placeholder="Ex: Pote de Açaí 2L" required>
         <label for="preco">Preço do Produto: *</label>
-        <input type="number" name="preco" class="input" id="preco" step="0.010" placeholder="Ex: 13,99" required>
+        <input type="text" name="preco" class="input" id="preco" placeholder="Ex: 13,99" required>
         <label for="descricao">Descrição</label>
         <textarea name="descricao" id="descricao" name='descricao' class="input"></textarea>
         <label for="photo" id="labelPhoto">Foto do Produto: *</label>

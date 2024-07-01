@@ -7,14 +7,24 @@
     border: 0;
     outline: 0;
 }
-/* Heade of page */
-
+html{
+    max-width: 1500px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* Header of page */
+body{
+    width: 100%;
+    background-color: rgb(156, 0, 104);
+}
 header{
 
     width: 100%;
     height: 50px;
     background-color: rgb(156, 0, 104);
-    outline: 1px solid white;
+    border-bottom: 1px solid white;
     display: flex;
 }
 .header_1{
@@ -25,6 +35,9 @@ header{
     display: flex;
     justify-content: start;
     align-items: center;
+}
+.header_1 a{
+    color: white;
 }
 .header_2{
 

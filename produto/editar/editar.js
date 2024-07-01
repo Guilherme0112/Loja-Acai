@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function(){
             reader.readAsDataURL(file);
         }
     });
-    var delet = document.getElementsById('delete')[0];
-    delet.addEventListener('click', function(){
-        var cofirm = cofirm("Você realmente deseja apagar este produto?");
-        if(!cofirm){
-            return false; 
+    var delet = document.getElementById('delete');
+    delet.addEventListener('click', function(delet){
+        var c = confirm("Você realmente deseja apagar este produto?");
+        if(!c){
+            delet.preventDefault(); 
         }
     })
 });

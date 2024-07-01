@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function vali(){
     var nome = document.getElementById('nome');
-    var preco = document.getElementById('preco');
     var descricao = document.getElementById('descricao');
     var photoLabel = document.getElementById('labelPhoto');
     var photo = document.getElementById('photo');

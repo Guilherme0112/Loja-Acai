@@ -17,8 +17,8 @@
         $pass = $_POST['password'];
         $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
         if(mysqli_num_rows($sql) == 0){
-            if(strlen($name) > 2 && strlen($name) < 55 && strlen($phone) == 12 && strlen($cep) == 9 && isset($email) && strlen($pass) > 3 && strlen($pass) <= 16){
-                $sql = mysqli_query($conexao, "INSERT INTO users VALUES (DEFAULT, '$name', '$phone', '$cep', '$email', '$pass', DEFAULT)");
+            if(strlen($name) > 2 && strlen($name) < 55 && strlen($phone) == 15 && strlen($cep) == 9 && isset($email) && strlen($pass) > 3 && strlen($pass) <= 16){
+                $sql = mysqli_query($conexao, "INSERT INTO users VALUES (DEFAULT, '$name', '$phone', '$cep', '$email', '$pass', DEFAULT, DEFAULT)");
                 $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
                 $res = $sql->fetch_assoc();
                 $idSession = $res['id'];

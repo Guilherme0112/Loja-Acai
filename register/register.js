@@ -1,11 +1,26 @@
+document.addEventListener('DOMContentLoaded', function(){
+    var phone = document.getElementById('phone');
+    phone.addEventListener('input', function(){
+        var phoneV = phone.value;
+        phoneV = phoneV.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+        phone.value = phoneV;
+    })
+    var cep = document.getElementById('cep');
+    cep.addEventListener('input', function(){
+        var cepV = cep.value;
+        cepV = cepV.replace(/^(\d{3})(\d{5})$/, '$1-$2');
+        cep.value = cepV;
+    })
+})
+//
 function back(){
-    location.href = '../index.php';
+    history.go(-1);
 }
-
+// 
 function vali(){
     var nome = document.getElementById('name');
-    var phone = document.getElementById('phone');
     var cep = document.getElementById('cep');
+    var phone = document.getElementById('phone');
     var senha = document.getElementById('password');
     if(nome.value.length <= 2 || nome.value.length >= 55){
         nome.style.outline = "2px solid red";
@@ -16,9 +31,9 @@ function vali(){
         document.getElementById('msgName').innerHTML = "";
         
     }
-    if(phone.value.length != 12){
+    if(phone.value.length != 15){
         phone.style.outline = "2px solid red";
-        document.getElementById('msgPhone').innerHTML = "O número celular precisa estar no modelo: 00 000000000";
+        document.getElementById('msgPhone').innerHTML = "O número celular precisa estar no modelo: (00) 00000-0000";
         return false;
     } else {
         phone.style.outline = "none";
