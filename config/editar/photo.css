@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px;
+    width: 400px;
+    height: 500px;
+    outline: 2px solid white;
+    border-radius: 10px;
+}
+#img{
+    display: none;
+    width: 170px;
+    height: 170px;
+    margin: 10px 50px;
+    border-radius: 50%;
+    outline: 2px solid white;
+}
+label{
+
+    width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: rgb(156, 0, 104);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+label:hover{
+
+    background-color: rgb(93, 0, 62);
+    color: white;
+}
+input[type='file']{
+    display: none;
+}
+.btn{
+
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+    color: rgb(156, 0, 104);
+    font-size: 17px;
+    transition: .3s;
+}
+.btn:hover{
+
+    background-color: rgb(93, 0, 62);
+    color: white;
+}

@@ -27,11 +27,11 @@
         $preco = $_POST['preco'];
         $descricao = $_POST['descricao'];
         $photo = $_FILES['photo']['name'];
-        if(strlen($nome) > 2 && strlen($nome) < 50 && isset($_FILES['photo']['name']) && strlen($descricao) < 301){
+        if(strlen($nome) > 2 && strlen($nome) < 50 && isset($_FILES['photo']['name']) && strlen($descricao) < 301 && strlen($preco > 2) && is_numeric($preco)){
             $photo = $_FILES['photo']['name'];
             $ext = pathinfo($photo, PATHINFO_EXTENSION);
             //
-            
+            $preco = str_replace(",", ".", $preco);
             $newPhoto = nomePhoto($newPhoto);
             $newRoute = "database/arquivos/$idSession/$newPhoto." . $ext;
 
@@ -72,7 +72,7 @@
         <label for="nome">Nome do Produto: *</label>
         <input type="text" name="nome" id="nome" class="input" placeholder="Ex: Pote de Açaí 2L" required>
         <label for="preco">Preço do Produto: *</label>
-        <input type="text" name="preco" class="input" id="preco" placeholder="Ex: 13,99" required>
+        <input type="number" step="0.01" name="preco" class="input" id="preco" placeholder="Ex: 13,99" required>
         <label for="descricao">Descrição</label>
         <textarea name="descricao" id="descricao" name='descricao' class="input"></textarea>
         <label for="photo" id="labelPhoto">Foto do Produto: *</label>

@@ -64,7 +64,6 @@ input[type='submit']:hover{
 
     background-color: rgb(93, 0, 62);
     color: white;
-    border: 1px solid white;
 }
 #preco{
    width: 100px;
@@ -101,4 +100,9 @@ input[type='submit']:hover{
     object-position: center;
     object-fit: contain;
     background-color: black;
+}
+#delete:hover{
+
+    background-color: rgb(197, 0, 0);
+    border: 0;
 }

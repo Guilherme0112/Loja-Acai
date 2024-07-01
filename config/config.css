@@ -18,13 +18,15 @@ main{
     outline: 2px solid white;
     border-radius: 10px;
     color: white;
-    margin: 0 20px;
+    margin: 10px;
+
 }
 .img-profile{
     width: 250px;
     height: 250px;
     border-radius: 50%;
     outline: 2px solid white;
+    object-fit: cover;
 }
 .btn{
 
@@ -56,6 +58,7 @@ main{
     outline: 2px solid white;
     border-radius: 10px;
     padding: 10px;
+    margin: 10px;
     color: white;
 }
 input{

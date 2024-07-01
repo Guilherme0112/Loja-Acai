@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="meusprodutos.css">
     <script src="meusprodutos.js"></script>
     <link rel="shortcut icon" href="../../assets/icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../fontawesome-free-6.5.1-web/css/all.min.css">
     <title>Meus Produtos</title>
 </head>
 <body>
@@ -50,14 +51,12 @@
                     $photoP = $i['photoProduct'];
                     $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
                     
-                    echo "<a href='../editar/editar.php?p=$idP' class='box'>
-                            <img src='../../$photoP' class='img'>
-                            <p class='title-box line-of-options'>$nomeP</p>
-                            <span class='preco'>
-                                <del class='ex-preco'>R$ $exPreco</del>
-                                R$ $precoP
-                            </span>
-                        </a>";
+                    echo "<div class='box-p'>
+                            <img src='../../$photoP' class='photo'>
+                            <a href='../produto.php?p=$idP' class='nome-p line-of-options'>$nomeP</a>
+                            <p class='preco-p'>R$ $precoP</p>
+                            <a href='../editar/editar.php?p=$idP' class='edit fa-solid fa-pencil'></a>
+                        </div>";
                 }
             } else {
                 echo "<p class='msg-product'>

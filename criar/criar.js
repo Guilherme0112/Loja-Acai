@@ -46,3 +46,11 @@ function vali(){
         photoLabel.style.outline = "none";
     }
 }
+//
+document.addEventListener('DOMContentLoaded', function(){
+
+    document.getElementById('preco').addEventListener('input', function(){
+        var precoF = parseFloat(this.value).toFixed(2);
+        this.value = precoF;
+    });
+});

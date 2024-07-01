@@ -74,7 +74,7 @@
                 <h1>Descriçao</h1>
                 <p><?php echo $descricaoP ?></p>
                 <h1>Dono</h1>
-                <a href='<?php echo "../loja/loja.php?l=$idUser" ?>' class="line-of-options"><?php echo $nomeUser ?></a>
+                <a href='<?php echo "../loja/profile.php?l=$idUser" ?>' class="line-of-options"><?php echo $nomeUser ?></a>
                 <h1>Preço</h1>
                 <p>R$ <?php echo $precoP ?></p>
                 <a href="" class="btn-buy">Comprar</a>

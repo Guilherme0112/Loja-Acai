@@ -19,3 +19,26 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     })
 });
+function vali(){
+    var nome = document.getElementById('nome');
+    var tel = document.getElementById('tel');
+    var cep = document.getElementById('cep');
+    if(nome.value.length > 2 && nome.value.length < 55){
+        nome.style.outline = "none";
+    } else {
+        nome.style.outline = "2px solid red";
+        return false;
+    }
+    if(tel.value.length === 15){
+        tel.style.outline = "none";
+    } else {
+        tel.style.outline = "2px solid red";
+        return false;
+    }
+    if(cep.value.length === 9){
+        cep.style.outline = "none";
+    } else {
+        cep.style.outline = "2px solid red";
+        return false;
+    }
+}
