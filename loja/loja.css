@@ -31,4 +31,56 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+.edit{
+    background-color: rgb(196, 0, 0) !important;
+}
+.edit:hover{
+    background-color: rgb(156, 0, 0) !important;
+}
+.btn-buy{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    background-color: rgb(18, 173, 18);
+    height: 40px;
+    width: 234px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    font-size: 17px;
+}
+.btn-buy:hover{
+    background-color: rgb(0, 140, 0);
+}
+footer{
+
+    border-top: 1px solid white;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 50px;
+}
+footer *{
+    color: white;
+}
+footer div{
+
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+footer div p{
+
+    font-size: 20px;
+    width: 100%;
+    text-align: end;
 }

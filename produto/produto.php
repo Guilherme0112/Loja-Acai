@@ -5,6 +5,14 @@
     if(empty($idP)){
         header('location: ../index.php');
     }
+    if(isset($_SESSION['email'])){
+        $email = $_SESSION['email'];
+        $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
+        $r = $sql->fetch_assoc();
+        $idSession = $r['id'];
+    
+    }
+ 
     $sql = mysqli_query($conexao, "SELECT * FROM products WHERE idProduct = $idP");
     if(mysqli_num_rows($sql) == 0){
         header('location: ../index.php');
@@ -31,11 +39,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="produto.css">
-    <script src="produto.js"></script>
     <link rel="stylesheet" href="../classes.css">
     <link rel="shortcut icon" href="../assets/icone.ico" type="image/x-icon">
     <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.min.css">
     <link rel="shortcut icon" href="../assets/icone.ico" type="image/x-icon">
+    <script src="../jquery-3.7.1.js"></script>
+    <script src="produto.js"></script>
     <title><?php echo $nomeP ?></title>
 </head>
 <body>
@@ -78,6 +87,20 @@
                 <h1>Preço</h1>
                 <p>R$ <?php echo $precoP ?></p>
                 <a href="" class="btn-buy">Comprar</a>
+                <?php 
+                    if(isset($_SESSION['email'])){
+                        $sql = mysqli_query($conexao, "SELECT * FROM carrinho WHERE idProduto = $idP AND idUser = $idSession");
+                        if(mysqli_num_rows($sql) == 0){
+                            echo "
+                                <input type='button' class='btn-car' value='Adicionar ao Carrinho'>
+                                ";
+                        } else {
+                            echo "
+                                <input type='button' class='btn-car' value='Retirar do Carrinho'>
+                            ";
+                        }
+                    }
+                ?>
             </div>
         </section>
     </main>

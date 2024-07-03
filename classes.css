@@ -129,30 +129,52 @@ header div a{
     margin: 20px;
     background-color: #cbcecf;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
  }
  .box-nov:hover{
 
-    transform: scale(1.02);
+    box-shadow: 0 0 10px black;
     transition: .7s;
+ }
+ .box-nov p{
+
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(156, 0, 104);
+ }
+ .box-nov span{
+
+    font-size: 70px;
+    color: rgb(156, 0, 104);
  }
 
  /* box-stores */
 
 .box-stores{
 
-    width: 200px;
-    height: 100px;
-    background-color: #cbcecf;
-    border-radius: 10px;
+    outline: 2px solid #cbcecf;
     margin: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     cursor: pointer;
 }
 .box-stores:hover{
 
-    transform: scale(1.03);
+    box-shadow: 0 0 10px black;
     transition: .3s;
 }
+.img-box-store{
 
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
  /* settings of page */
 
 .line-of-options{ /* Line bottom of options */
@@ -171,6 +193,10 @@ header div a{
 }
 .button{
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: 200px;
     border-radius: 20px;
     height: 40px;
@@ -201,4 +227,64 @@ header div a{
 
     font-size: 15px;
     color: white;
+}
+.box-p{
+
+    width: 500px;
+    height: 130px;
+    border-radius: 10px;
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+    margin: 10px;
+}
+.box-p:hover{
+
+    box-shadow: 0 0 7px black;
+}
+.photo{
+
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.nome-p{
+    margin: 10px;
+    width: 200px;
+    color: rgb(156, 0, 104);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.preco-p{
+
+    width: 80px;
+    color: rgb(156, 0, 104);
+}
+.edit{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 0 5px;
+    color: white;
+    display: flex;
+    place-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+.edit{
+    background-color: rgb(39, 39, 201);
+    text-decoration: none;
+    padding: 16px;
+    transition: .3s;
+}
+.edit:hover{
+    background-color: rgb(9, 9, 171)
 }

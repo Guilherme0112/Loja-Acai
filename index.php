@@ -1,7 +1,6 @@
 <?php
     session_start();
     include_once('database/conexao.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -53,9 +52,10 @@
             while($i = $sql->fetch_assoc()){
                 $idP = $i['idProduct'];
                 $nomeP = $i['nomeProduct'];
-                $precoP = $i['price'];
+                $preco = $i['price'];
+                $precoP = number_format($preco, 2, ',', '.');
                 $photoP = $i['photoProduct'];
-                $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
+                $exPreco = number_format(((17/100) * $preco) + $preco, 2, ',', '.');
 
                 echo "<a href='produto/produto.php?p=$idP' class='box'>
                     <img src='$photoP' class='img'>
@@ -73,62 +73,57 @@
     </section>
     <section class="best-stores">
         <h2 class="title">Melhores lojas</h2>
-        <div class="box-stores"></div>
-        <div class="box-stores"></div>
-        <div class="box-stores"></div>
-        <div class="box-stores"></div>
-        <div class="box-stores"></div>
+        <?php 
+            $sql = mysqli_query($conexao, "SELECT distinct p.ownerProduct, nome, u.photoProfile  FROM users AS u JOIN products AS p WHERE id = p.ownerProduct ORDER BY RAND() LIMIT 6;");
+            while($r = $sql->fetch_assoc()){
+                $idUser = $r['ownerProduct'];
+                $photoProfile = $r['photoProfile'];
+                $photoProfile = substr($photoProfile, 3);
+                $nomeUser = $r['nome'];
+                echo "
+                <a href='loja/profile.php?l=$idUser' class='box-stores' title='$nomeUser'>
+                    <img src='$photoProfile' class='img-box-store'>
+                </a>
+                ";
+            }
+        ?>
     </section>
     <section class="novidades">
         <h2 class="title">Novidades para você!</h2>
         <div class="box-nov">
             <p>Frete Grátis</p>
+            <span class="fa-solid fa-truck"></span>
         </div>
         <div class="box-nov">
             <p>Entrega mais rápidas!</p>
+            <span class="fa-solid fa-bolt"></span>
         </div>
         <div class="box-nov">
             <p>Muito mais gostoso!</p>
+            <span class="fa-solid fa-bowl-food"></span>
         </div>
     </section>
     <section class="info">
         <h2 class="title">Tópicos</h2>
-        <div class="box">
-            <h3 style="text-align: center;">Quais os benefícios do açaí?</h3>
-            <p style="text-align: center; padding: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore sint dolores aliquid provident
-                accusantium nihil culpa ullam incidunt sed cumque dolorum, dolore alias ducimus. Incidunt labore ipsam
-                ad eum voluptate.</p>
-            <div class="button-size">
-                <button class="button">Veja mais</button>
-            </div>
-        </div>
-        <div class="box">
-            <h3 style="text-align: center;">Buscamos Motoboy</h3>
-            <p style="text-align: center; padding: 10px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere voluptate, dolores odit, et ex
-                reiciendis, quisquam rerum harum mollitia commodi est. Neque obcaecati consequuntur molestiae modi vel
-                sequi aliquam voluptatibus.</p>
-            <div class="button-size">
-                <button class="button">Veja mais</button>
-            </div>
-        </div>
-        <div class="box">
-            <h3 style="text-align: center;">Encontre a Loja mais perto de você!</h3>
-            <p style="text-align: center; padding: 10px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum culpa expedita recusandae deserunt enim
-                officiis, voluptates dignissimos dolore esse impedit nisi incidunt illo qui ipsa aliquam quaerat fugiat,
-                praesentium laudantium.</p>
-            <div class="button-size">
-                <button class="button">Veja mais</button>
-            </div>
-        </div>
-        <div class="box">
-            <h3 style="text-align: center;">Muito mais cupons para você!</h3>
-            <p style="text-align: center; padding: 10px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum culpa expedita recusandae deserunt enim
-                officiis, voluptates dignissimos dolore esse impedit nisi incidunt illo qui ipsa aliquam quaerat fugiat,
-                praesentium laudantium.</p>
-            <div class="button-size">
-                <button class="button">Veja mais</button>
-            </div>
-        </div>
+        <?php
+            $sql = mysqli_query($conexao, "SELECT * FROM topico ORDER BY RAND() LIMIT 4");
+            while($r = $sql->fetch_assoc()){
+                $idT = $r['idTopico'];
+                $titleT = $r['titleT'];
+                $topico = $r['topico'];
+
+                echo "
+                    <div class='box'> 
+                        <h3 style='text-align: center;'>$titleT</h3>
+                        <p style='text-align: center; padding: 10px;'>$topico</p>
+                        <div class='button-size'>
+                            <a href='' class='button'>Veja mais</a>
+                        </div>
+                    </div>
+                ";
+
+            }
+        ?>
     </section>
     <footer>
         <div id="opcoes">

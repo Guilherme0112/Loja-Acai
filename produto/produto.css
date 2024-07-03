@@ -63,3 +63,23 @@ main{
 .btn-buy:hover{
     background-color: rgb(0, 140, 0);
 }
+.btn-car{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important;
+    background-color: rgb(241, 140, 0);
+    height: 40px;
+    width: 234px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 30px 0;
+}
+.btn-car:hover{
+    background-color: rgb(230, 110, 0);
+    color: white;
+}

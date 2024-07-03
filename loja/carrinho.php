@@ -1,16 +1,15 @@
 <?php
     session_start();
     include_once('../database/conexao.php');
-    if(!isset($_SESSION['email']) || empty($_SESSION['email'])){
+    if(!isset($_SESSION['email'])){
         header('location: ../index.php');
     }
     $email = $_SESSION['email'];
     $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
     $resp = $sql->fetch_assoc();
     $idSession = $resp['id'];
-    $nome = $resp['nome'];
-    $photoProfile = $resp['photoProfile'];
-    
+
+    $total = 0.00;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,10 +19,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="loja.css">
     <link rel="stylesheet" href="../classes.css">
-    <script src="loja.js"></script>
     <link rel="shortcut icon" href="../assets/icone.ico" type="image/x-icon">
     <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.min.css">
-    <title><?php echo $nome ?></title>
+    <link rel="shortcut icon" href="../assets/icone.ico" type="image/x-icon">
+    <script src="../jquery-3.7.1.js"></script>
+    <script src="loja.js"></script>
+    <title>Carrinho</title>
 </head>
 <body>
     <header>
@@ -33,52 +34,48 @@
             </a>
             <a href="../pedidos/pedidos.php" class="line-of-options" style="color: white;">Meus Pedidos</a>
             <a href="../produto/meus-produtos/meusprodutos.php" class="line-of-options" style="color: white;">Meus Produtos</a>
-            <a href="../criar/criar.php" class="line-of-options" style="color: white;">Criar Produto</a>
             <a href="../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>
-            <a href="carrinho.php" class="line-of-options" style="color: white;">Carrinho</a>
         </div>
         <div class='header_2'>
             <a href='../login/logout.php' title='Sair' class='fa-solid fa-right-from-bracket'></a>
         </div>
     </header>
-    <section class="first-part">
-        <div>
-            <img src="<?php echo $photoProfile ?>" class="photoUser">
-        </div>
-        <div>
-            <p class="nome-user"><?php echo $nome ?></p>
-        </div>
-    </section>
     <main>
         <?php
-            $sql = mysqli_query($conexao, "SELECT * FROM products WHERE ownerProduct = $idSession");
+            $sql = mysqli_query($conexao, "SELECT p.nomeProduct, p.photoProduct, p.price, p.ownerProduct, p.idProduct FROM carrinho JOIN products as p WHERE idUser = $idSession AND idProduto = p.idProduct;");
             if(mysqli_num_rows($sql) == 0){
-                echo "
-                        <p class='msg-product'>
-                            Você não postou nenhum produto
-                            <a href='../criar/criar.php' class='line-of-options'>Postar agora</a>
-                        </p>
-                        ";
-            } else {
+
+
+            } else { 
                 while($i = $sql->fetch_assoc()){
                     $idP = $i['idProduct'];
                     $photoP = $i['photoProduct'];
+                    $preco = $i['price'];
                     $nomeP = $i['nomeProduct'];
-                    $precoP = $i['price'];
-                    $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
+                    $exPreco = number_format(((17/100) * $preco) + $preco, 2);
+
                     echo "
-                
-                        <a href='../produto/produto.php?p=$idP' class='box'>
-                            <img src='../$photoP' class='img'>
-                            <p class='title-box line-of-options'>$nomeP</p>
-                            <span class='preco'>
-                            <del class='ex-preco'>R$ $exPreco</del>
-                            R$ $precoP
-                        </span>
-                        </a>";
+                        <div class='box-p'>
+                            <input type='text' id='idP' style='display: none;' data-comment-id='$idP'>
+                            <img src='../$photoP' class='photo'>
+                            <a href='../produto/produto.php?p=$idP' class='nome-p line-of-options'>$nomeP</a>
+                            <p class='preco-p'>R$ $preco</p>
+                        </div>";
+
+                        $total = $total + $preco;
+                        $totalF = number_format($total, 2, ',', '.');
                 }
             }
         ?>
     </main>
+    <footer>
+        <div>
+            <p>Total:</p>
+            <?php echo "R$" . $totalF ?>
+        </div>
+        <div>
+            <button class="btn-buy">Comprar</button>
+        </div>
+    </footer>
 </body>
 </html>

@@ -27,7 +27,7 @@
         $preco = $_POST['preco'];
         $descricao = $_POST['descricao'];
         $photo = $_FILES['photo']['name'];
-        if(strlen($nome) > 2 && strlen($nome) < 50 && isset($_FILES['photo']['name']) && strlen($descricao) < 301 && strlen($preco > 2) && is_numeric($preco)){
+        if(strlen($nome) > 2 && strlen($nome) < 50 && isset($_FILES['photo']['name']) && strlen($descricao) < 301 && is_numeric($preco)){
             $photo = $_FILES['photo']['name'];
             $ext = pathinfo($photo, PATHINFO_EXTENSION);
             //

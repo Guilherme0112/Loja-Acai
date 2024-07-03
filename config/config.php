@@ -34,8 +34,16 @@
     }
     if(isset($_POST['delete'])){
         $sql = mysqli_query($conexao, "SELECT * FROM info WHERE idUser = $idSession");
-        if(mysqli_num_rows($sql)){
-            $deleteInfo = mysqli_query($conexao, "DELETE FROM info WHERE idUser = $idSession");
+        if(mysqli_num_rows($sql) > 0){
+            $delete = mysqli_query($conexao, "DELETE FROM info WHERE idUser = $idSession");
+        }
+        $sql = mysqli_query($conexao, "SELECT * FROM products WHERE ownerProduct = $idSession");
+        if(mysqli_num_rows($sql) > 0){
+            $delete = mysqli_query($conexao, "DELETE FROM products WHERE ownerProduct = $idSession");
+        }
+        $sql = mysqli_query($conexao, "SELECT * FROM carrinho WHERE idUser = $idSession");
+        if(mysqli_num_rows($sql) > 0){
+            $delete = mysqli_query($conexao, "DELETE FROM carrinho WHERE idUser = $idSession");
         }
         rmdir("../database/arquivos/$idSession");
         $delete = mysqli_query($conexao, "DELETE FROM users WHERE id = $idSession");
