@@ -20,5 +20,18 @@
                 }
             }
         }
+        if(isset($_POST['delete'])){
+            $dProduto = $_POST['delete'];
+            $sql = mysqli_query($conexao, "SELECT * FROM products WHERE idProduct = $dProduto");
+            if(mysqli_num_rows($sql) > 0){
+                $r = $sql->fetch_assoc();
+                $photo = $r['photoProduct'];
+                if(file_exists("../$photo")){
+                    unlink("../$photo");
+                }
+                $sql = mysqli_query($conexao, "SET foreign_key_checks = 0");
+                $sql = mysqli_query($conexao, "DELETE FROM products WHERE idProduct = $dProduto");
+            }
+        }
     }
 ?>

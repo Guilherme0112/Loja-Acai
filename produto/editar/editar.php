@@ -94,12 +94,12 @@
 <body>
     <header>
         <div class="header_1">
-            <a href="../../index.php">
+            <a href="../../index.php" class="icon-a">
                 <img src="../../assets/icone.ico" alt="" class="icon">
             </a>
-            <a href="../../loja/loja.php" class="line-of-options" style="color: white;">Minha Loja</a>
-            <a href="../../criar/criar.php" class="line-of-options" style="color: white;">Postar Produto</a>
-            <a href="../../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>
+            <a href="../../loja/loja.php" class="fa-solid fa-circle-user" style="color: white;" title="Minha Loja"></a>
+            <a href="../../criar/criar.php" class="fa-solid fa-folder-plus" style="color: white;" title="Criar Produto"></a>
+            <a href="../../config/config.php" class="fa-solid fa-gear" style="color: white;"></a>
         </div>
         <div class='header_2'>
             <a href='../../login/logout.php' title='Sair' class='fa-solid fa-right-from-bracket'></a>

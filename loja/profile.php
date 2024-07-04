@@ -30,7 +30,7 @@
 <body>
     <header>
         <div class="header_1">
-            <a href="../index.php">
+            <a href="../index.php" class="icon-a">
                 <img src="../assets/icone.ico" alt="" class="icon">
             </a>
         </div>
@@ -75,8 +75,9 @@
                     $idP = $i['idProduct'];
                     $photoP = $i['photoProduct'];
                     $nomeP = $i['nomeProduct'];
-                    $precoP = $i['price'];
-                    $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
+                    $preco = $i['price'];
+                    $precoP = number_format($preco, 2, ',', '.');
+                    $exPreco = number_format(((17/100) * $precoP) + $precoP, 2, ',', '.');
                     echo "
                 
                         <a href='../produto/produto.php?p=$idP' class='box'>

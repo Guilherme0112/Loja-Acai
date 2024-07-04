@@ -40,7 +40,7 @@
 </head>
 <body>
     <header>
-        <a href="../../index.php">
+        <a href="../../index.php" class="icon-a">
             <img src="../../assets/icone.ico" class="icon">
         </a>
         <div class="header_1">

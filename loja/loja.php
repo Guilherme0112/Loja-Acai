@@ -31,11 +31,20 @@
             <a href="../index.php">
                 <img src="../assets/icone.ico" alt="" class="icon">
             </a>
-            <a href="../pedidos/pedidos.php" class="line-of-options" style="color: white;">Meus Pedidos</a>
-            <a href="../produto/meus-produtos/meusprodutos.php" class="line-of-options" style="color: white;">Meus Produtos</a>
-            <a href="../criar/criar.php" class="line-of-options" style="color: white;">Criar Produto</a>
-            <a href="../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>
-            <a href="carrinho.php" class="line-of-options" style="color: white;">Carrinho</a>
+            <a href="../produto/meus-produtos/solicitacoes.php" class="fa-solid fa-folder-open" title='Solicitações'></a>
+            <a href="../pedidos/pedidos.php" class="fa-solid fa-box" title='Pedidos'></a>
+            <a href="../produto/meus-produtos/meusprodutos.php" class="fa-solid fa-bag-shopping" style="color: white;" title='Meus Produtos'></a>
+            <a href="../criar/criar.php" class="fa-solid fa-folder-plus" style="color: white;" title="Criar Produto"></a>
+            <a href="../config/config.php" class="fa-solid fa-gear" style="color: white;" title="Configurações"></a>
+            <a href="carrinho.php" class="fa-solid fa-cart-shopping" title="Carrinho"></a>
+            <?php
+                $sql = mysqli_query($conexao, "SELECT * FROM admin WHERE admin = $idSession");
+                if(mysqli_num_rows($sql) > 0){
+                    echo "
+                        <a href='../admin/admin.php' class='fa-solid fa-user-tie' title='Adminstradores'></a>
+                        ";
+                }
+            ?>
         </div>
         <div class='header_2'>
             <a href='../login/logout.php' title='Sair' class='fa-solid fa-right-from-bracket'></a>
@@ -64,8 +73,9 @@
                     $idP = $i['idProduct'];
                     $photoP = $i['photoProduct'];
                     $nomeP = $i['nomeProduct'];
-                    $precoP = $i['price'];
-                    $exPreco = number_format(((17/100) * $precoP) + $precoP, 2);
+                    $preco = $i['price'];
+                    $precoP = number_format($preco, 2, ',', '.');
+                    $exPreco = number_format(((17/100) * $preco) + $preco, 2, ',', '.');
                     echo "
                 
                         <a href='../produto/produto.php?p=$idP' class='box'>

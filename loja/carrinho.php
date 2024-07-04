@@ -29,14 +29,15 @@
 <body>
     <header>
         <div class="header_1">
-            <a href="../index.php">
+            <a href="../index.php" class="icon-a">
                 <img src="../assets/icone.ico" alt="" class="icon">
             </a>
-            <a href="../pedidos/pedidos.php" class="line-of-options" style="color: white;">Meus Pedidos</a>
-            <a href="../produto/meus-produtos/meusprodutos.php" class="line-of-options" style="color: white;">Meus Produtos</a>
-            <a href="../config/config.php" class="line-of-options" style="color: white;">Editar Perfil</a>
+            <a href='../pedidos/pedidos.php' class='fa-solid fa-box' title='Pedidos'></a>
+            <a href='../produto/meus-produtos/meusprodutos.php' class='fa-solid fa-bag-shopping' style='color: white;' title='Meus Produtos'></a>
+            <a href='../config/config.php' class='fa-solid fa-gear' style='color: white;' title='Configurações'></a>
         </div>
         <div class='header_2'>
+            <a href='../loja/loja.php' title='Perfil' class='fa-solid fa-circle-user'></a>
             <a href='../login/logout.php' title='Sair' class='fa-solid fa-right-from-bracket'></a>
         </div>
     </header>
@@ -71,7 +72,13 @@
     <footer>
         <div>
             <p>Total:</p>
-            <?php echo "R$" . $totalF ?>
+            <?php 
+                if(isset($totalF)){
+                    echo "R$" . $totalF;
+                } else {
+                    echo '0,00';
+                }
+             ?>
         </div>
         <div>
             <button class="btn-buy">Comprar</button>

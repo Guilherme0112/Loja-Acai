@@ -69,28 +69,20 @@
 </head>
 <body>
     <header>
-        <a href="../index.php">
+        <a href="../index.php" class="icon-a">
             <img src="../assets/icone.ico" class="icon">
         </a>
         <div class="header_1">
-            <a href="../promotions/promotions.php" class="line-of-options" style="color: white;">Promoções</a>
-            <a href="../loja/loja.php" class="line-of-options" style="color: white;">Minha Loja</a>
-            <a href="" class="line-of-options" style="color: white;">Ajuda</a>
+            <a href='../pedidos/pedidos.php' class='fa-solid fa-box' title='Pedidos'></a>
+            <a href='../produto/meus-produtos/meusprodutos.php' class='fa-solid fa-bag-shopping' style='color: white;' title='Meus Produtos'></a>
+            <a href='../criar/criar.php' class='fa-solid fa-folder-plus' style='color: white;' title='Criar Produto'></a>
+            <a href='../config/config.php' class='fa-solid fa-gear' style='color: white;' title='Configurações'></a>
+            <a href='../loja/carrinho.php' class='fa-solid fa-cart-shopping' title='Carrinho'></a>
         </div>
-        <?php 
-            if(isset($_SESSION['email'])){
-                echo "<div class='header_2'>
-                        <a href='../loja/loja.php' title='Seu Perfil' class='fa-solid fa-user'></a>
-                        <a href='../login/logout.php' title='Sair' class='fa-solid fa-right-from-bracket'></a>
-                    </div>";
-            } else {
-
-                echo "<div class='header_2'>
-                        <a href='../login/login.php' title='Login' class='fa-solid fa-user'></a>
-                    </div>";
-            }
-            
-        ?>
+        <div class="header_2">
+            <a href='../loja/loja.php' title='Perfil' class='fa-solid fa-circle-user'></a>
+            <a href='../login/logout.php' title='Sair' class='fa-solid fa-right-from-bracket'></a>
+        </div>
     </header>
     <main>
         <section class="photoProfile">

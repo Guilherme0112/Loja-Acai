@@ -23,3 +23,20 @@ $(function(){
         })
     })
 })
+$(function(){    
+    $('.btn-delete').click(function(){
+        $.ajax({
+            url: 'config.php',
+            type: 'POST',
+            data: {
+                delete: produto
+            },
+            success: function(e){
+                console.log('Success ' + e);
+                window.location = "../admin/posts/posts.php";
+            }, error: function(e){
+                console.log('Erro ' + e);
+            }
+        })
+    })
+})
