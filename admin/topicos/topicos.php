@@ -22,11 +22,15 @@
             <a href="../../index.php" class="icon-a">
                 <img src="../../assets/icone.ico" class="icon">
             </a>
+            <a href='../admin.php' class='fa-solid fa-user-tie' title='Adminstradores'></a>
         </div>
     </header>
+    <section class="section">
+        <a href="criar.php" class="btn">Criar Produto</a>
+    </section>
     <main>
         <?php 
-            $sql = mysqli_query($conexao, "SELECT * FROM topico");
+            $sql = mysqli_query($conexao, "SELECT * FROM topicos");
             if(mysqli_num_rows($sql) > 0){
                 while($i = $sql->fetch_assoc()){
                     $idT = $i['idTopico'];
@@ -35,17 +39,22 @@
                     echo "
                         <div class='box'> 
                             <h3 style='text-align: center;'>$titleT</h3>
-                            <p style='text-align: center; padding: 10px;'>$topico</p>
+                            <p>$topico</p>
                             <div class='button-size'>
-                                <a href='' class='button'>Editar</a>
+                                <a href='editar.php?p=$idT' class='button'>Editar</a>
                             </div>
                         </div>
                 ";
                 }
             } else {
-                echo "";
+                echo "<p class='msg-product'>
+                        Sem tópicos por agora
+                    </p>"; 
             }
         ?>
     </main>
 </body>
 </html>
+
+
+

@@ -96,6 +96,17 @@ header div a{
     text-decoration: none;
     transition: .3s;
 }
+.box p{
+
+    width: 100%;
+    color: black;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    padding: 10px;
+}
 .box:hover{
 
     box-shadow: 0px 0px 7px black;
@@ -239,6 +250,7 @@ header div a{
     outline: 2px solid white;
     color: white;
     font-size: 20px;
+    margin: 30px 0;
 }
 .msg-product a{
 

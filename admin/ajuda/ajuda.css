@@ -1,0 +1,107 @@
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.box-ajuda{
+
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.box-ajuda:hover{
+    
+    box-shadow: 0 0 7px black;
+}
+.box-ajuda p{
+
+    color: rgb(156, 0, 104);
+    margin-right: 10px;
+}
+.box-ajuda span{
+
+    font-size: 12px;
+    color: rgb(156, 0, 104);
+}
+
+/*  */
+
+.box-div{
+
+    border-radius: 10px;
+    background-color: white;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin: 20px 0;
+}
+.nome{
+    
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: start;
+}
+.time{
+
+    width: 50%;
+    font-size: 12px;
+    display: flex;
+    justify-content: end;
+}
+.box-div h1{
+
+    width: 100%;
+    font-size: 20px;
+}
+.box-div span{
+
+    width: 100%;
+}
+form{
+
+    width: 500px;
+    outline: 2px solid white;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+textarea{
+
+    width: 90%;
+    height: 100px;
+    margin: 10px 0;
+    resize: vertical;
+    border-radius: 10px;
+    padding: 10px;
+}
+button{
+    width: 90%;
+    height: 40px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: rgb(6, 180, 6);
+    color: white;
+    border-radius: 10px;
+    font-size: 17px;
+    transition: .3s;
+}
+button:hover{
+    background-color: rgb(6, 140, 6);
+}

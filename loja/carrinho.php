@@ -45,8 +45,9 @@
         <?php
             $sql = mysqli_query($conexao, "SELECT p.nomeProduct, p.photoProduct, p.price, p.ownerProduct, p.idProduct FROM carrinho JOIN products as p WHERE idUser = $idSession AND idProduto = p.idProduct;");
             if(mysqli_num_rows($sql) == 0){
-
-
+                echo "<p class='msg-product'>
+                        Você não tem produtos no carrinho
+                    </p>"; 
             } else { 
                 while($i = $sql->fetch_assoc()){
                     $idP = $i['idProduct'];

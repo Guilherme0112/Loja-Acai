@@ -29,10 +29,10 @@
                     <a href='criar/criar.php' class='fa-solid fa-folder-plus' style='color: white;' title='Criar Produto'></a>
                     <a href='config/config.php' class='fa-solid fa-gear' style='color: white;' title='Configurações'></a>
                     <a href='loja/carrinho.php' class='fa-solid fa-cart-shopping' title='Carrinho'></a>
+                    <a href='ajuda/central.php' class='fa-solid fa-question' style='color: white;'></a>
                         ";
                 }
             ?>
-            <a href="" class="fa-solid fa-question" style="color: white;"></a>
         </div>
         <?php 
             if(isset($_SESSION['email'])){
@@ -71,13 +71,13 @@
                 $exPreco = number_format(((17/100) * $preco) + $preco, 2, ',', '.');
 
                 echo "<a href='produto/produto.php?p=$idP' class='box'>
-                    <img src='$photoP' class='img'>
-                    <p class='title-box line-of-options'>$nomeP</p>
-                    <span class='preco'>
-                        <del class='ex-preco'>R$ $exPreco</del>
-                        R$ $precoP
-                    </span>
-                </a>";
+                        <img src='$photoP' class='img'>
+                        <p class='title-box line-of-options'>$nomeP</p>
+                        <span class='preco'>
+                            <del class='ex-preco'>R$ $exPreco</del>
+                            R$ $precoP
+                        </span>
+                    </a>";
             }
             
 
@@ -119,24 +119,30 @@
     <section class="info">
         <h2 class="title">Tópicos</h2>
         <?php
-            $sql = mysqli_query($conexao, "SELECT * FROM topico ORDER BY RAND() LIMIT 4");
-            while($r = $sql->fetch_assoc()){
-                $idT = $r['idTopico'];
-                $titleT = $r['titleT'];
-                $topico = $r['topico'];
+            $sql = mysqli_query($conexao, "SELECT * FROM topicos ORDER BY RAND() LIMIT 4");
+            if(mysqli_num_rows($sql) > 0){
+                while($r = $sql->fetch_assoc()){
+                    $idT = $r['idTopico'];
+                    $titleT = $r['titleT'];
+                    $topico = $r['topico'];
 
-                echo "
-                    <div class='box'> 
-                        <h3 style='text-align: center;'>$titleT</h3>
-                        <p style='text-align: center; padding: 10px;'>$topico</p>
-                        <div class='button-size'>
-                            <a href='' class='button'>Veja mais</a>
+                    echo "
+                        <div class='box'> 
+                            <h3 style='text-align: center;'>$titleT</h3>
+                            <p>$topico</p>
+                            <div class='button-size'>
+                                <a href='' class='button'>Veja mais</a>
+                            </div>
                         </div>
-                    </div>
-                ";
+                    ";
 
+                }
+            } else {
+                echo "<p class='msg-product'>
+                        Sem tópicos por agora
+                    </p>"; 
             }
-        ?>
+       ?>
     </section>
     <footer>
         <div id="opcoes">

@@ -10,7 +10,6 @@
         $sql = mysqli_query($conexao, "SELECT * FROM users WHERE email = '$email'");
         $r = $sql->fetch_assoc();
         $idSession = $r['id'];
-    
     }
  
     $sql = mysqli_query($conexao, "SELECT * FROM products WHERE idProduct = $idP");
