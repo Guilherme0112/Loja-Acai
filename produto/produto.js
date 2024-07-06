@@ -24,6 +24,23 @@ $(function(){
     })
 })
 $(function(){    
+    $('.btn-buy').click(function(){
+        $.ajax({
+            url: 'config.php',
+            type: 'POST',
+            data: {
+                buy: produto
+            },
+            success: function(e){
+                console.log('Success');
+                location.href = '../loja/carrinho.php';
+            }, error: function(e){
+                console.log('Erro ' + e);
+            }
+        })
+    })
+})
+$(function(){    
     $('.btn-delete').click(function(){
         $.ajax({
             url: 'config.php',

@@ -59,6 +59,7 @@ main{
     border-radius: 10px;
     transition: .3s;
     margin: 30px 0;
+    cursor: pointer;
 }
 .btn-buy:hover{
     background-color: rgb(0, 140, 0);

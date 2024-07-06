@@ -96,7 +96,7 @@
                 <a href='<?php echo "../loja/profile.php?l=$idUser" ?>' class="line-of-options"><?php echo $nomeUser ?></a>
                 <h1>Preço</h1>
                 <p>R$ <?php echo $precoP ?></p>
-                <a href="" class="btn-buy">Comprar</a>
+                <a class="btn-buy">Comprar</a>
                 <?php 
                     if(isset($_SESSION['email'])){
                         $sql = mysqli_query($conexao, "SELECT * FROM carrinho WHERE idProduto = $idP AND idUser = $idSession");

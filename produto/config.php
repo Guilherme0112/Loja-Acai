@@ -20,6 +20,16 @@
                 }
             }
         }
+        if(isset($_POST['buy'])){
+            $produto = $_POST['buy'];
+            $sql = mysqli_query($conexao, "SELECT * FROM products WHERE idProduct = $produto");
+            if(mysqli_num_rows($sql) > 0){
+                $sql = mysqli_query($conexao, "SELECT * FROM carrinho WHERE idProduto = $produto AND idUser = $idSession");
+                if(mysqli_num_rows($sql) == 0){
+                    $sql = mysqli_query($conexao, "INSERT INTO carrinho VALUES (default, $idSession, $produto)");
+                }
+            }
+        }
         if(isset($_POST['delete'])){
             $dProduto = $_POST['delete'];
             $sql = mysqli_query($conexao, "SELECT * FROM products WHERE idProduct = $dProduto");
