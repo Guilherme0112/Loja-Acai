@@ -53,7 +53,7 @@ header{
     transition: .3s;
     margin: 0 5px;
 }
-.header_1 a:hover{
+.header_1 a:hover, .header_2 a:hover{
     background-color: rgba(255, 255, 255, 0.3);
 }
 .header_2{
@@ -70,6 +70,15 @@ header{
     cursor: pointer;
     color: white;
     text-decoration: none;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
 }
 header div a{
 

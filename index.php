@@ -62,22 +62,28 @@
         <h2 class="title">Produtos que talvez você goste!</h2>
         <?php
             $sql = mysqli_query($conexao, "SELECT * FROM products ORDER BY RAND() LIMIT 8");
-            while($i = $sql->fetch_assoc()){
-                $idP = $i['idProduct'];
-                $nomeP = $i['nomeProduct'];
-                $preco = $i['price'];
-                $precoP = number_format($preco, 2, ',', '.');
-                $photoP = $i['photoProduct'];
-                $exPreco = number_format(((17/100) * $preco) + $preco, 2, ',', '.');
+            if(mysqli_num_rows($sql) > 0){    
+                while($i = $sql->fetch_assoc()){
+                    $idP = $i['idProduct'];
+                    $nomeP = $i['nomeProduct'];
+                    $preco = $i['price'];
+                    $precoP = number_format($preco, 2, ',', '.');
+                    $photoP = $i['photoProduct'];
+                    $exPreco = number_format(((17/100) * $preco) + $preco, 2, ',', '.');
 
-                echo "<a href='produto/produto.php?p=$idP' class='box'>
-                        <img src='$photoP' class='img'>
-                        <p class='title-box line-of-options'>$nomeP</p>
-                        <span class='preco'>
-                            <del class='ex-preco'>R$ $exPreco</del>
-                            R$ $precoP
-                        </span>
-                    </a>";
+                    echo "<a href='produto/produto.php?p=$idP' class='box'>
+                            <img src='$photoP' class='img'>
+                            <p class='title-box line-of-options'>$nomeP</p>
+                            <span class='preco'>
+                                <del class='ex-preco'>R$ $exPreco</del>
+                                R$ $precoP
+                            </span>
+                        </a>";
+                }
+            } else {
+                echo "<p class='msg-product'>
+                        Sem produtos por agora
+                    </p>"; 
             }
             
 
@@ -88,16 +94,22 @@
         <h2 class="title">Melhores lojas</h2>
         <?php 
             $sql = mysqli_query($conexao, "SELECT distinct p.ownerProduct, nome, u.photoProfile  FROM users AS u JOIN products AS p WHERE id = p.ownerProduct ORDER BY RAND() LIMIT 6;");
-            while($r = $sql->fetch_assoc()){
-                $idUser = $r['ownerProduct'];
-                $photoProfile = $r['photoProfile'];
-                $photoProfile = substr($photoProfile, 3);
-                $nomeUser = $r['nome'];
-                echo "
-                <a href='loja/profile.php?l=$idUser' class='box-stores' title='$nomeUser'>
-                    <img src='$photoProfile' class='img-box-store'>
-                </a>
-                ";
+            if(mysqli_num_rows($sql) > 0){
+                while($r = $sql->fetch_assoc()){
+                    $idUser = $r['ownerProduct'];
+                    $photoProfile = $r['photoProfile'];
+                    $photoProfile = substr($photoProfile, 3);
+                    $nomeUser = $r['nome'];
+                    echo "
+                    <a href='loja/profile.php?l=$idUser' class='box-stores' title='$nomeUser'>
+                        <img src='$photoProfile' class='img-box-store'>
+                    </a>
+                    ";
+                }
+            } else {
+                echo "<p class='msg-product'>
+                        Sem lojas para recomendar
+                    </p>"; 
             }
         ?>
     </section>
@@ -138,6 +150,7 @@
 
                 }
             } else {
+                
                 echo "<p class='msg-product'>
                         Sem tópicos por agora
                     </p>"; 
